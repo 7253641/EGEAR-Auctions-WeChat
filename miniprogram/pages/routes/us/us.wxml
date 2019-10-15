@@ -1,0 +1,25 @@
+<!--pages/us/us.wxml-->
+<view class="cu-custom" style='height:{{CustomBar}}px;'>
+    <view class="cu-bar fixed" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px; color: #fff;">
+        <navigator class='action' style='top:{{StatusBar}}px;' open-type="navigateBack" delta="1" hover-class="none">
+            <text class='icon-back'></text> 关于我们
+        </navigator>
+    </view>
+</view>
+<view class="cu-custom" style='height:{{CustomBar}}px; opacity: {{opacity}};'>
+    <view class="cu-bar fixed " style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px; background-color:#fff;">
+        <navigator class='action' style='top:{{StatusBar}}px;' open-type="navigateBack" delta="1" hover-class="none">
+            <text class='icon-back'></text> 关于我们
+        </navigator>
+    </view>
+</view>
+<image class='header' src='{{json.about_image}}'></image>
+<text class='public-txt'>公司简介</text>
+<text class='us-test'>{{json.about_agreement}}</text>
+<text class='public-txt' wx:if="{{json.about_certificates_image}}">国家认证拍卖资质</text>
+<image class='license' src='{{json.about_certificates_image}}'></image>
+<text class='bottom'>{{json.about_company_name}}</text>
+<!-- 全局加载 -->
+<i-spin style="z-index: 990;" fix wx:if="{{fix}}"></i-spin>
+<!-- 登录提示 -->
+<i-toast id="toast" />

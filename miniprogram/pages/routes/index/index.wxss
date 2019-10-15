@@ -1,0 +1,175 @@
+/* pages/index/index.wxss */
+@import "../../../utils/wxss/auctionlist.wxss";
+@import "../../../utils/wxss/nav.wxss";
+
+page {
+        background-color: #fff;
+}
+
+/* ==========================
+*banner notice
+ ============================*/
+
+.header {
+        width: 750rpx;
+        height: 400rpx;
+        position: relative;
+}
+
+.header swiper {
+        width: 750rpx;
+        height: 400rpx;
+}
+
+.header swiper image {
+        width: 750rpx;
+        height: 400rpx;
+}
+
+.header .header-notice {
+        width: 750rpx;
+        height: 82rpx;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,.5) 100%);
+	box-shadow:0px 0px 8px 0px rgba(0,0,0,0.1);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.header .header-notice image {
+        width: 30rpx;
+        height: 36rpx;
+        margin-left: 30rpx;
+}
+
+.header .header-notice swiper {
+	width: 670rpx;
+	height: 82rpx;
+        font-size: 28rpx;
+        color: #fff;
+	padding-top: 30rpx;
+	box-sizing: border-box;
+}
+
+/* ==========================
+* 公共标头
+ ============================*/
+
+.public-header {
+        width: 750rpx;
+        padding: 62rpx 30rpx 28rpx 30rpx;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+}
+
+.public-header view {
+        display: flex;
+        align-items: center;
+}
+
+.public-header view image {
+        width: 42rpx;
+        height: 42rpx;
+}
+
+.public-header view text {
+        /* margin-left: 24rpx; */
+        font-size: 40rpx;
+        color: #333;
+        font-weight: 600;
+}
+
+.public-header text {
+        font-size: 24rpx;
+        color: #999;
+}
+
+/* ==========================
+* 今日推荐
+ ============================*/
+
+.today {
+        width: 750rpx;
+        height: 340rpx;
+        white-space: nowrap;
+        box-sizing: border-box;
+}
+
+.today  .today-list {
+        display: inline-block;
+        width: 244rpx;
+        height: 320rpx;
+        margin-top: 10rpx;
+        margin-left: 30rpx;
+        box-shadow: 0rpx 0rpx 8rpx 0rpx rgba(0, 0, 0, 0.18);
+        border-radius: 4rpx;
+        position: relative;
+}
+
+.today  .today-list image {
+        width: 244rpx;
+        height: 216rpx;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 4rpx;
+}
+
+.today  .today-list .today-list-state {
+        position: absolute;
+        width: 88rpx;
+        height: 36rpx;
+        background-color: #db0600;
+        border-radius: 0 0 16rpx 0;
+        color: #fff;
+        font-size: 22rpx;
+        top: 0;
+        left: 0;
+        text-align: center;
+        line-height: 36rpx;
+}
+
+.today  .today-list .today-list-h1 {
+        position: absolute;
+        bottom: 54rpx;
+        left: 20rpx;
+        color: #333;
+        font-size: 26rpx;
+        font-weight: 600;
+}
+
+.today  .today-list .today-list-h2 {
+        position: absolute;
+        bottom: 16rpx;
+        left: 20rpx;
+        color: #1f6fed;
+        font-size: 26rpx;
+}
+
+.today  .today-list .today-list-h2::before {
+        content: attr(data-text);
+        color: #999;
+        font-size: 22rpx;
+}
+
+.today .today-list-last {
+        display: inline-block;
+        width: 150rpx;
+        height: 320rpx;
+        position: relative;
+}
+
+.today .today-list-last image {
+        width: 70rpx;
+        height: 70rpx;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -35rpx;
+        margin-left: -35rpx;
+}

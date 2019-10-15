@@ -1,0 +1,17 @@
+<!--pages/service/service.wxml-->
+<view class="cu-custom" style="height:{{CustomBar}}px;">
+	<view class="cu-bar fixed " style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px; background-color:#fff;">
+		 <navigator class='action' style='top:{{StatusBar}}px;' open-type="navigateBack" delta="1" hover-class="none">
+                        <text class='icon-back'></text> 客户服务
+                </navigator>
+	</view>
+</view>
+<view style='height:{{CustomBar}}px;'></view>
+<view class='se-header'>
+	<image src="/image/service.png"></image>
+	<text>欢迎咨询易极客户服务</text>
+</view>
+<view class='se-btn'>
+	<text bindtap='calling'>电话咨询</text>
+	<button open-type="contact" bindcontact="handleContact" >在线咨询</button>
+</view>

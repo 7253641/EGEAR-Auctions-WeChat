@@ -1,0 +1,145 @@
+/* 专场拍列表 */
+.auction{
+	width: 690rpx;
+	height: 446rpx;
+	margin-left: 30rpx;
+	border-radius: 8rpx;
+	box-shadow: 0rpx 0rpx 8rpx 0rpx rgba(0, 0, 0, .1);
+	margin-bottom: 30rpx;
+	position: relative;
+}
+.auction .auction-img{
+	width: 690rpx;
+	height: 322rpx;
+	border-radius: 4rpx 4rpx 0 0;
+}
+.auction .auction-zh{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100rpx;
+	height: 40rpx;
+	background: linear-gradient(270deg, rgba(253,58,117,1) 0%, rgba(249,51,51,1) 100%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 0 4rpx 0 4rpx;
+}
+.auction .auction-zh view{
+	width: 10rpx;
+	height: 10rpx;
+	border-radius: 5rpx;
+	background-color: #fff;
+}
+.auction .auction-zh text{
+	margin-left: 10rpx;
+	color: #fff;
+	font-size: 22rpx;
+}
+.auction .auction-yu{
+	position: absolute;
+	width: 690rpx;
+	height: 46rpx;
+	border-radius: 8rpx;
+	top: 276rpx;
+	left: 0;
+	background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+	padding: 0 20rpx;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.auction .auction-yu text{
+	color: #fff;
+	font-size: 22rpx;
+	font-weight: 500;
+}
+.auction .auction-je{
+	position: absolute;
+	width: 690rpx;
+	height: 322rpx;
+	border-radius: 8rpx;
+	background-color: rgba(0, 0, 0, .4);
+	top: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.auction .auction-je text{
+	font-size: 36rpx;
+	color: #fff;
+	line-height: 50rpx;
+	font-weight: 500;
+}
+.auction .auction-h1{
+	position: absolute;
+	top: 322rpx;
+	left: 0;
+	width: 650rpx;
+	height: 62rpx;
+	margin-left: 20rpx;
+	display: flex;
+	align-items: center;
+	padding-top: 20rpx;
+}
+.auction .auction-h1 text:first-of-type{
+	width: 86rpx;
+	height: 34rpx;
+	border-radius: 2rpx;
+	border: 2rpx solid #1F6FED;
+	color: #1F6FED;
+	font-size: 22rpx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.auction .auction-h1 text:last-of-type{
+	display: block;
+	width: 566rpx;
+	margin-left: 10rpx;
+	font-size: 32rpx;
+	color: #333;
+	font-weight: 600;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.auction .auction-h2{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 650rpx;
+	height: 62rpx;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-left: 20rpx;
+	box-sizing: border-box;
+	padding-bottom: 20rpx;
+}
+.auction .auction-h2 view{
+	width: 400rpx;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+.auction .auction-h2 view image{
+	width: 24rpx;
+	height: 24rpx;
+}
+.auction .auction-h2 view text{
+	display: block;
+	margin-left: 8rpx;
+	width: 400rpx;
+	font-size: 26rpx;
+	color: #999;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.auction .auction-h2 text{
+	font-size: 26rpx;
+	color: #999;
+}

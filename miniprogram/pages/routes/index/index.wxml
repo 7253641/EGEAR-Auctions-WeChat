@@ -1,0 +1,111 @@
+<!--pages/index/index.wxml-->
+<view class="cu-custom" style='height:{{CustomBar}}px;'>
+	<view class="cu-bar fixed bg-shadeTop" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+		<view class='content' style="top:{{StatusBar}}px;">易极环宇</view>
+	</view>
+</view>
+<view class="cu-custom" style='height:{{CustomBar}}px; opacity: {{opacity}};'>
+	<view class="cu-bar fixed " style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px; background-color:#fff;">
+		<view class='content'  style='top:{{StatusBar}}px;'>
+			易极环宇
+		</view>
+	</view>
+</view>
+<view class='header'>
+	<swiper circular autoplay="true" interval="5000">
+		<block wx:for="{{bannerJson.list}}" wx:key>
+			<swiper-item>
+				<image src="{{item.pic}}" class="slide-image" mode='aspectFill'/>
+			</swiper-item>
+		</block>
+	</swiper>
+	<view class='header-notice'>
+		<image src='/image/notice.png'></image>
+		<swiper vertical="true" autoplay="true" circular="true" interval="7000">
+			<block wx:for="{{json.notice}}" wx:key>
+				<swiper-item>{{item}}</swiper-item>
+			</block>
+		</swiper>
+	</view>
+</view>
+<!-- 我要买车/我要卖车/西南二手手机 -->
+<!-- <view class='nav'>
+	<navigator class='nav- nav01' url='/pages/iwantBuy/iwantBuy'>
+		<text>我要买车</text>
+		<image src='/image/sale-01.png'></image>
+	</navigator>
+	<navigator class='nav- nav02' url='/pages/iwantSell/iwantSell'>
+		<text>我要卖车</text>
+		<image src='/image/sale-02.png'></image>
+	</navigator>
+	<view class='nav- nav03' bindtap='goWx'>
+		<text>西南二手机</text>
+		<image src='/image/sale-03.png'></image>
+	</view>
+</view> -->
+<!-- <view class='public-header'>
+	<view>
+		<image src='/image/index-01.png'></image>
+		<text>今日推荐</text>
+	</view>
+	<text>查看更多>></text>
+</view> -->
+<!-- 今日推荐 -->
+<!-- <scroll-view scroll-x class='today'>
+	<block wx:for="{{10}}" wx:key>
+		<view class='today-list'>
+			<image src='/image/test.png' mode='aspectFill'></image>
+			<text class='today-list-state'>一口价</text>
+			<text class='today-list-h1'>卡特d320挖掘机</text>
+			<text class='today-list-h2' data-text='一口价：'>10万元</text>
+		</view>
+	</block>
+	<view class='today-list-last'>
+		<image src='/image/more.png'></image>
+	</view>
+</scroll-view> -->
+<view class='public-header'>
+	<view>
+		<!-- <image src='/image/index-02.png'></image> -->
+		<text>近期专场拍</text>
+	</view>
+	<text bindtap='goAuction'>查看更多>></text>
+</view>
+<!-- <slide-view class = "slide" width = "320" height = "100" slideWidth = "200">    
+    <view slot = "left"> 这里是插入到组内容 </view>
+    <view slot = "right"> 
+        <view>标为已读 </view>
+        <view>删除 </view>
+    </view>
+</slide-view> -->
+<block wx:for="{{json.aucList}}" wx:key>
+	<navigator class='auction' url='/pages/models/auction/auctionHall/auctionHall?rid={{item.rid}}'>
+		<image class='auction-img' src='{{item.descimage}}' mode='aspectFill'></image>
+		<view class='auction-yu' wx:if="{{item.status == 0}}">
+			<text>开拍时间：{{item.ontime}}</text>
+			<text>预展中</text>
+		</view>
+		<view class='auction-zh' wx:if="{{item.status == 1}}">
+			<view></view>
+			<text>正在拍</text>
+		</view>
+		<view class='auction-je' wx:if="{{item.status == 2}}">
+			<text>已结束</text>
+		</view>
+		<view class='auction-h1'>
+			<text>{{item.auction_type}}</text>
+			<text>{{item.roomname}}</text>
+		</view>
+		<view class='auction-h2'>
+			<view>
+				<image src='/image/address.png'></image>
+				<text>{{item.address}}</text>
+			</view>
+			<text>{{item.cars_num}}台设备/{{item.hits}}次围观</text>
+		</view>
+	</navigator>
+</block>
+<!-- 全局加载 -->
+<i-spin style="z-index: 990;" fix wx:if="{{fix}}"></i-spin>
+<!-- 登录提示 -->
+<i-toast id="toast" />

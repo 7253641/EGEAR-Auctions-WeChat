@@ -1,0 +1,38 @@
+/* pages/baildes/baildes.wxss */
+page{
+	background-color: #f2f2f2;
+}
+.baildes{
+	width: 690rpx;
+	margin-left: 30rpx;
+	box-shadow: 0rpx 0rpx 8rpx 0rpx rgba(0, 0, 0, 0.15);
+	border-radius: 4rpx;
+	margin-top: 30rpx;
+	padding: 20rpx;
+	background-color: #fff;
+}
+.baildes text{
+	display: block;
+	line-height: 70rpx;
+	font-size: 28rpx;
+	color: #333;
+}
+.baildes text::before{
+	content: attr(data-text);
+	font-size: 28rpx;
+	color: #666;
+	font-weight: 400;
+}
+.baildes .baildes-border{
+	border-bottom: 1rpx solid #eee;
+}
+.baildes .baildes-bl{
+	font-size: 28rpx;
+	color: #1F6FED;
+	font-weight: 500;
+}
+.baildes .baildes-re{
+	font-size: 28rpx;
+	color: #C30000;
+	font-weight: 500;
+}

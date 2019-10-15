@@ -1,0 +1,22 @@
+<!--pages/baildes/baildes.wxml-->
+<view class="cu-custom" style="height:{{CustomBar}}px;">
+	<view class="cu-bar fixed " style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px; background-color:#f2f2f2;">
+		 <navigator class='action' style='top:{{StatusBar}}px;' open-type="navigateBack" delta="1" hover-class="none">
+                        <text class='icon-back'></text> 保证金详情
+                </navigator>
+	</view>
+</view>
+<view style="height:{{CustomBar}}px;"></view>
+<view class='baildes'>
+	<text class='baildes-border' data-text='竞买号牌：'>{{json.tid}}</text>
+	<text data-text='保证金用途：'>{{json.from}}</text>
+	<text data-text='支付时间：'>{{json.create_time}}</text>
+	<text data-text='支付方式：'>{{json.deposit_pay_type}}</text>
+	<text class='baildes-bl' data-text='支付金额：'>{{json.deposit}}</text>
+	<text class='baildes-re' data-text='支付状态：'>{{json.is_return}}</text>
+	<text data-text='保证金描述：'>{{json.desc}}</text>
+</view>
+<!-- 全局加载 -->
+<i-spin style="z-index: 990;" fix wx:if="{{fix}}"></i-spin>
+<!-- 登录提示 -->
+<i-toast id="toast" />

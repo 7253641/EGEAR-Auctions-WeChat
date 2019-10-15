@@ -1,0 +1,17 @@
+<!--pages/video/video.wxml-->
+<view class="cu-custom" style='height:{{CustomBar}}px;'>
+	<view class="cu-bar fixed" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px; color: #fff;">
+		<navigator class='action' style='top:{{StatusBar}}px;' open-type="navigateBack" delta="1" hover-class="none">
+                        <text class='icon-back'></text> 设备视频
+                </navigator>
+	</view>
+</view>
+<view style='height:{{CustomBar}}px;'></view>
+<view class='video' style='top: {{CustomBar}}px;'>
+	<video src='{{src}}' bindplay='play'></video> 
+</view>
+<view class='down'>
+	<text bindtap='downLoad'>下载视频</text>
+</view>
+<!-- 登录提示 -->
+<i-toast id="toast" />

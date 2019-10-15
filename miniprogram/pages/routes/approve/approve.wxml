@@ -1,0 +1,30 @@
+<!--pages/approve/approve.wxml-->
+<view class="cu-custom" style="height:{{CustomBar}}px;">
+	<view class="cu-bar fixed " style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px; background-color:#fff;">
+		 <navigator class='action' style='top:{{StatusBar}}px;' open-type="navigateBack" delta="1" hover-class="none">
+                        <text class='icon-back'></text> 实名认证
+                </navigator>
+	</view>
+</view>
+<view style='height:{{CustomBar}}px;'></view>
+<view class='noreal' wx:if="{{json.is_real == 0}}">
+	<input type='text' placeholder='请输入姓名' placeholder-class='_input' data-text='legalname' bindinput='getValue'></input>
+	<input type='text' placeholder='请输入身份证号' placeholder-class='_input' data-text='idcard' bindinput='getValue'></input>
+	<!-- <text>说明：不知道说点啥找文案不知道说点啥找文案不知道说点啥找文案不知道说点啥找文案不知道说点啥找文案不知道说点啥找文案不知道说点啥找文案</text> -->
+</view>
+<view wx:if="{{json.is_real == 1}}" class='real'>
+	<image src='/image/realpage.png'></image>
+	<view class='real-left'>
+		<text>姓名</text>
+		<text>身份证号</text>
+	</view>
+	<view class='real-right'>
+		<text>{{json.name_hide}}</text>
+		<text>{{json.idcard_hide}}</text>
+	</view>
+</view>
+<text class='btn' wx:if="{{json.is_real == 0}}" bindtap='btn'>提交认证</text>
+<!-- 全局加载 -->
+<i-spin style="z-index: 990;" fix wx:if="{{fix}}"></i-spin>
+<!-- 登录提示 -->
+<i-toast id="toast" />

@@ -1,0 +1,53 @@
+/* pages/bail/bail.wxss */
+page{
+	background-color: #f2f2f2;
+}
+.bail-list{
+	width: 690rpx;
+	height: 184rpx;
+	box-shadow: 0rpx 0rpx 8rpx 0rpx rgba(0, 0, 0, 0.15);
+	border-radius: 4rpx;
+	margin: 30rpx 0 0 30rpx;
+	position: relative;
+	background-color: #fff;
+}
+.bail-list .bail-list-h1{
+	display: block;
+	position: absolute;
+	width: 436rpx;
+	font-size: 30rpx;
+	color: #333;
+	overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+	top: 20rpx;
+	left: 20rpx;
+}
+.bail-list .bail-list-h2{
+	display: block;
+	font-size: 34rpx;
+	color: #1F6FED;
+	position: absolute;
+	bottom: 70rpx;
+	left: 20rpx;
+}
+.bail-list .bail-list-h2::before{
+	content: attr(data-text);
+	font-size: 24rpx;
+	color: #666;
+}
+.bail-list .bail-list-h3{
+	display: block;
+	font-size: 24rpx;
+	color: #999;
+	position: absolute;
+	bottom: 20rpx;
+	left: 20rpx;
+}
+.bail-list image{
+	position: absolute;
+	width: 156rpx;
+	height: 108rpx;
+	top: 38rpx;
+	right: 20rpx;
+}

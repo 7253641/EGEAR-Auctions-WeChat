@@ -1,0 +1,95 @@
+<!--pages/auction/order/order.wxml-->
+<view class="cu-custom" style="height:{{CustomBar}}px;">
+	<view class="cu-bar fixed " style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px; background-color:#f2f2f2;">
+		 <navigator class='action' style='top:{{StatusBar}}px;' open-type="navigateBack" delta="1" hover-class="none">
+                        <text class='icon-back'></text>
+                </navigator>
+		<view class='content' style='top:{{StatusBar}}px;'>
+			订单
+		</view>
+	</view>
+</view>
+<view style="height:{{CustomBar}}px;"></view>
+<!-- tabs -->
+<view class='tabs tabsFix' style='top: {{CustomBar}}px; background-color:#f2f2f2; border: none;'>
+	<block wx:for="{{['全部','已成交','违约']}}" wx:key>
+		<text class='{{index == tabsIndex ? "choose" : ""}}' data-index='{{index}}' bindtap='onTabs'>{{item}}</text>
+	</block>
+</view>
+<view style="height: 78rpx;"></view>
+<!-- content -->
+<!-- <block wx:for="{{listJson}}" wx:key>
+	<view class='order-list'>
+		<navigator url='/pages/auction/orderdes/orderdes?id={{item.id}}'>
+			<view class='order-list-top'>
+				<text>{{item.room_name}}</text>
+				<text class='bl' wx:if="{{item.order_status == 0}}">已成交</text>
+				<text class='re' wx:if="{{item.order_status == 1}}">违约</text>
+			</view>
+			<view class='order-list-center'>
+				<view class='order-list-center_pic'>
+					<image src='{{item.mainpic}}' mode='aspectFill'></image>
+					<text>NO: {{item.rid}}</text>
+				</view>
+				<view class='order-list-center_content'>
+					<text class='order-list-center_content-h1'>{{item.car_name}}</text>
+					<text class='order-list-center_content-h2'>{{item.message}}</text>
+					<view>
+						<text data-text='成交价'>{{item.money}}</text>
+					</view>
+				</view>
+			</view>
+		</navigator>
+		<view class='order-list-bot'>
+			<navigator url='/pages/service/service'>联系客服</navigator>
+			<navigator url='/pages/parameters/parameters?a_id={{item.aid}}'>设备参数</navigator>
+			<navigator class='bl' url='/pages/auction/orderdes/orderdes?id={{item.id}}'>订单详情</navigator>
+		</view>
+	</view>
+</block> -->
+<block wx:for="{{listJson}}" wx:key>
+	<view class='list'>
+		<navigator class='list-top' url='/pages/models/auction/orderaccounts/orderaccounts?rid={{item.rid}}'>
+			<text>{{item.room_name}}</text>
+			<image src='/image/go.png'></image>
+		</navigator>
+		<block wx:for="{{item.carsList}}" wx:key>
+			<navigator class='list-' url='/pages/models/auction/orderdes/orderdes?id={{item.id}}'>
+				<view class='list-left'>
+					<image src='{{item.mainpic}}' mode='aspectFill'></image>
+					<text>NO: {{item.tid}}</text>
+				</view>
+				<view class='list-right'>
+					<text class='list-right-h1'>{{item.car_name}}</text>
+					<text class='list-right-h2'>{{item.message}}</text>
+					<view>
+						<text class='list-right-state bl' wx:if="{{item.order_status == 0}}">已成交</text>
+						<text class='list-right-state re' wx:if="{{item.order_status == 1}}">违约</text>
+						<text class='list-right-h3' data-txt='成交价：'>{{item.price}}</text>
+					</view>
+				</view>
+			</navigator>
+		</block>
+		<view class='list-bottom'>
+			<navigator url='/pages/routes/service/service'>联系客服</navigator>
+			<navigator wx:if="{{tabsIndex != 2}}" url='/pages/models/auction/orderaccounts/orderaccounts?rid={{item.rid}}'>结算</navigator>
+		</view>
+	</view>
+</block>
+<!-- 暂无数据 -->
+<view class='nodata' wx:if="{{!listJson.length}}">
+	<image src='/image/nodata.png'></image>
+	<text>暂无数据</text>
+</view>
+<!-- 列表加载 -->
+<view class="loading" wx:if="{{loading}}" style='background-color:#f2f2f2;'>
+	<image class='loading_img' src='/image/loading.png'></image>
+	<text>加载中...</text>
+</view>
+<view class="loading" wx:if="{{loadingTest && listJson.length}}"  style='background-color:#f2f2f2;'>
+	<text>没有更多数据了</text>
+</view>
+<!-- 全局加载 -->
+<i-spin style="z-index: 990;" fix wx:if="{{fix}}"></i-spin>
+<!-- 登录提示 -->
+<i-toast id="toast" />

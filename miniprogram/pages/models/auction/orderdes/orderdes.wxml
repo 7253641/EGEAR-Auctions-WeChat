@@ -1,0 +1,62 @@
+<!--pages/auction/orderdes/orderdes.wxml-->
+<view class="cu-custom" style="height:{{CustomBar}}px;">
+	<view class="cu-bar fixed " style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+		 <navigator class='action' style='top:{{StatusBar}}px; color: #fff;' open-type="navigateBack" delta="1" hover-class="none">
+                        <text class='icon-back'></text> 订单详情
+                </navigator>
+	</view>
+</view>
+<view class="cu-custom" style='height:{{CustomBar}}px; opacity: {{opacity}};'>
+	<view class="cu-bar fixed " style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px; color: #fff; background: linear-gradient(90deg,rgba(86,145,200,1) 0%,rgba(53,82,255,1) 100%,rgba(4,145,215,1) 100%,rgba(0,64,253,1) 100%);">
+		<navigator class='action' style='top:{{StatusBar}}px;' open-type="navigateBack" delta="1" hover-class="none">
+                        <text class='icon-back'></text> 订单详情
+                </navigator>
+	</view>
+</view>
+<view class='header'>
+	<image src='/image/orderdes.png'></image>
+	<text class='header-h1'>{{json.roomname}}</text>
+	<!-- <text class='header-h2'>{{json.endtime}}</text> -->
+</view>
+<view class='des-info'>
+	<image class='des-info-pic' wx:if="{{json.order_status == 0}}" src='/image/orderdes-yes.png'></image>
+	<image class='des-info-pic' wx:if="{{json.order_status == 1}}" src='/image/orderdes-no.png'></image>
+	<view class='des-info-top'>
+		<text>订单编号 {{json.order_no}}</text>
+	</view>
+	<navigator class='des-info-content' url='/pages/public/parameters/parameters?a_id={{json.carInfo.a_id}}'>
+		<view class='des-info-left'>
+			<image src='{{json.carInfo.mainpic}}' mode='aspectFill'></image>
+			<text>NO:{{json.carInfo.tid}}</text>
+		</view>
+		<view class='des-info-right'>
+			<text class='des-info-right_h1'>{{json.carInfo.car_name}}</text>
+			<text class='des-info-right_h2'>{{json.carInfo.message}}</text>
+			<view>
+				<text data-text='成交价：'>{{json.price}}</text>
+				<text>查看拍品</text>
+			</view>
+		</view>
+	</navigator>
+</view>
+<view class='bid'>
+	<text class='bid-header'>我的出价</text>
+	<view class='bid-list'>
+		<view class='first'>
+			<text>出价人</text>
+			<text>价格</text>
+			<text>出价时间</text>
+		</view>
+		<block wx:for="{{json.bidList}}" wx:key>
+			<view>
+				<text>{{item.name}}</text>
+				<text>{{item.price}}</text>
+				<text>{{item.create_time}}</text>
+			</view>
+		</block>
+	</view>
+</view>
+<!-- 全局加载 -->
+<i-spin style="z-index: 990;" fix wx:if="{{fix}}"></i-spin>
+<!-- 登录提示 -->
+<i-toast id="toast" />

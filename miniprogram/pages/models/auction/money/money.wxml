@@ -1,0 +1,24 @@
+<!--pages/auction/money/money.wxml-->
+<view class="cu-custom" style="height:{{CustomBar}}px;">
+	<view class="cu-bar fixed " style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+		 <navigator class='action' style='top:{{StatusBar}}px; color: #fff;' open-type="navigateBack" delta="1" hover-class="none">
+                        <text class='icon-back'></text> 汇款提示
+                </navigator>
+	</view>
+</view>
+<view class='header'>
+	<text class='header-h1'>{{json.account_name}}</text>
+	<text class='header-h2'>{{json.account_number}}</text>
+	<text class='header-h3'>{{json.opening_bank}}</text>
+	<image src='/image/bank.png'></image>
+</view>
+<view class='txt'>
+	<text class='txt-'>温馨提示</text>
+	<text>{{json.bank_message}}</text>
+</view>
+<navigator class='btn' url='/pages/routes/service/service'>联系客服</navigator>
+<!-- 全局加载 -->
+<i-spin style="z-index: 990;" fix wx:if="{{fix}}"></i-spin>
+<!-- 登录提示 -->
+<i-toast id="toast" />
+

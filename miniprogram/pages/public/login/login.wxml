@@ -1,0 +1,18 @@
+<!--pages/login/login.wxml-->
+<view class='login'>
+    <text class='h1'>绑定手机号</text>
+    <view class='tel'>
+        <text>+86</text>
+        <input type='number' placeholder='请输入您的手机号' bindinput='getPhoneVal' placeholder-class='input_'></input>
+    </view>
+    <view class='code'>
+        <text>验证码</text>
+        <input type='number' placeholder='请输入验证码' bindinput='getCodeVal' placeholder-class='input_'></input>
+        <text bindtap="{{btnState}}">{{time}}</text>
+    </view>
+    <text class='btn' bindtap='submitBtn'>绑定</text>
+    <!-- <text class='h2'>登陆即为同意<text class='blu'>《用户使用协议》</text>及<text class='blu'>《隐私权条款》</text></text> -->
+    <text class='h2'>~易极环宇（北京）科技有限公司~</text>
+</view>
+<!-- 登录提示 -->
+<i-toast id="toast" />

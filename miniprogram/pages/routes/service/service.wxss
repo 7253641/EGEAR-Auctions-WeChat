@@ -1,0 +1,52 @@
+/* pages/service/service.wxss */
+page{
+	background-color: #fff;
+}
+.se-header{
+	width: 750rpx;
+	height: 472rpx;
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: center;
+}
+.se-header image{
+	width: 224rpx;
+	height: 228rpx;
+}
+.se-header text{
+	font-size: 32rpx;
+	color: #333;
+	margin-top: 46rpx;
+}
+.se-btn{
+	width: 690rpx;
+	height: 106rpx;
+	display: flex;
+	justify-content: space-between;
+	margin-left: 30rpx;
+}
+.se-btn text{
+	width: 330rpx;
+	height: 106rpx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 36rpx;
+	color: #fff;
+	font-weight: 500;
+	border-radius: 4rpx;
+	background: linear-gradient(270deg, rgba(252,196,100,1) 0%, rgba(253,180,0,1) 100%);
+}
+.se-btn button{
+	width: 330rpx;
+	height: 106rpx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 36rpx;
+	color: #fff;
+	font-weight: 500;
+	border-radius: 4rpx;
+	background: linear-gradient(90deg,rgba(86,145,200,1) 0%,rgba(53,82,255,1) 0%,rgba(4,145,215,1) 100%,rgba(0,64,253,1) 100%);
+}

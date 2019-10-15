@@ -1,0 +1,68 @@
+<!--pages/sale/sale/sale.wxml-->
+<view class="cu-custom" style="height:{{CustomBar}}px;">
+	<view class="cu-bar fixed " style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px; background-color:#fff;">
+		<view class='content'  style='top:{{StatusBar}}px;'>
+			天天拍
+		</view>
+	</view>
+</view>
+<view style='height:{{CustomBar}}px;'></view>
+<swiper class='header' indicator-dots="true" circular autoplay="true" interval="5000">
+	<block wx:for="{{bannerJson}}" wx:key>
+		<swiper-item>
+			<image src="{{item.pic}}" class="slide-image" mode='aspectFill'/>
+		</swiper-item>
+	</block>
+</swiper>
+<!-- tabs -->
+<view class='tabs'>
+	<block wx:for="{{['全部','暗标','竞价','一口价']}}" wx:key>
+		<text class='{{index == tabsIndex ? "choose" : ""}}' data-index='{{index}}' bindtap='onTabs'>{{item}}</text>
+	</block>
+</view>
+<view class='tabs tabsFix' style='top:{{CustomBar}}px;opacity: {{opacity}};'>
+	<block wx:for="{{['全部','暗标','竞价','一口价']}}" wx:key>
+		<text class='{{index == tabsIndex ? "choose" : ""}}' data-index='{{index}}' bindtap='onTabs'>{{item}}</text>
+	</block>
+</view>
+<!-- sale-list -->
+<block wx:for="{{listJson}}" wx:key>
+	<view class='sale-list'>
+		<image class='sale-list_state' wx:if="{{item.auction_type == 1}}" src='/image/ab.png' mode='aspectFill'></image>
+		<image class='sale-list_state' wx:if="{{item.auction_type == 2 || item.auction_type == 3}}" src='/image/jj.png' mode='aspectFill'></image>
+		<image class='sale-list_state' wx:if="{{item.auction_type == 4}}" src='/image/ykj.png' mode='aspectFill'></image>
+		<image class='sale-list-left' src='{{item.carInfo.p_mainpic}}' mode='aspectFill'></image>
+		<view class='sale-list-right'>
+			<text class='sale-list-right_h1'>{{item.carInfo.p_allname}}</text>
+			<text class='sale-list-right_h2'>{{item.carInfo.message}}</text>
+			<text class='sale-list-right_h3' wx:if="{{item.is_preview == 0}}">开始时间：{{item.start_time}}</text>
+			<text class='sale-list-right_h3' wx:if="{{item.is_preview == 1}}">结束时间：{{item.end_time}}</text>
+			<view class='sale-list-right_block'>
+				<view>
+					<text class='or' wx:if="{{item.is_preview == 0}}">预展中</text>
+					<text class='re' wx:if="{{item.is_preview == 1}}">正在拍</text>
+					<text class='bl' wx:if="{{item.carInfo.p_natuer}}">{{item.carInfo.p_natuer}}</text>
+				</view>
+				<text wx:if="{{item.auction_type == 2 || item.auction_type == 3}}">起拍价：<text class='sale-list-right_block_price'>{{item.price}}</text></text>
+				<text wx:if="{{item.auction_type == 4}}">一口价：<text class='sale-list-right_block_price'>{{item.price}}</text></text>
+			</view>
+		</view>
+	</view>
+</block>
+<!-- 暂无数据 -->
+<view class='nodata' wx:if="{{!listJson.length}}">
+	<image src='/image/nodata.png'></image>
+	<text>暂无数据</text>
+</view>
+<!-- 列表加载 -->
+<view class="loading" wx:if="{{loading}}">
+	<image class='loading_img' src='/image/loading.png'></image>
+	<text>加载中...</text>
+</view>
+<view class="loading" wx:if="{{loadingTest && listJson.length}}">
+	<text>没有更多数据了</text>
+</view>
+<!-- 全局加载 -->
+<i-spin style="z-index: 990;" fix wx:if="{{fix}}"></i-spin>
+<!-- 登录提示 -->
+<i-toast id="toast" />

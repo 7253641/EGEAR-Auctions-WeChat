@@ -1,0 +1,81 @@
+/* pages/approve/approve.wxss */
+page{
+	background-color: #fff;
+}
+.noreal{
+	width: 750rpx;
+}
+.noreal input{
+	width: 690rpx;
+	height: 124rpx;
+	margin-left: 30rpx;
+	border-bottom: 1rpx solid #eee;
+	font-size: 34rpx;
+	color: #333;
+}
+.noreal ._input{
+	font-size: 34rpx;
+	color: #ccc;
+}
+.noreal text{
+	display: block;
+	width: 690rpx;
+	margin-left: 30rpx;
+	margin-top: 30rpx;
+	font-size: 22rpx;
+	color: #999;
+	line-height: 40rpx;
+}
+.btn{
+	position: fixed;
+	width: 750rpx;
+	height: 98rpx;
+	background: linear-gradient(90deg,rgba(86,145,200,1) 0%,rgba(53,82,255,1) 0%,rgba(4,145,215,1) 100%,rgba(0,64,253,1) 100%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 36rpx;
+	color: #fff;
+	font-weight: 500;
+	bottom: 0;
+	left: 0;
+}
+.real{
+	width: 690rpx;
+	height: 280rpx;
+	border-radius: 4rpx;
+	background-color: #1F6FED;
+	margin: 30rpx;
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+}
+.real image{
+	position: absolute;
+	width: 242rpx;
+	height: 160rpx;
+	top: 28rpx;
+	right: 38rpx;
+}
+.real .real-left{
+	width: 156rpx;
+	height: 280rpx;
+	display: flex;
+	justify-content: center;
+	flex-flow: column;
+	align-items: flex-end;
+}
+.real .real-right{
+	width: 514rpx;
+	height: 280rpx;
+	display: flex;
+	justify-content: center;
+	flex-flow: column;
+	align-items: flex-start;
+}
+.real view text{
+	display: block;
+	font-size: 28rpx;
+	color: #fff;
+	line-height: 90rpx;
+}

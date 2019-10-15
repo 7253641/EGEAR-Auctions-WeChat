@@ -1,0 +1,69 @@
+<!--pages/auction/orderaccounts/orderaccounts.wxml-->
+<view class="cu-custom" style="height:{{CustomBar}}px;">
+	<view class="cu-bar" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+		 <navigator class='action' style='top:{{StatusBar}}px; color: #fff;' open-type="navigateBack" delta="1" hover-class="none">
+                <text class='icon-back'></text> 结算
+        </navigator>
+	</view>
+</view>
+<view class="cu-custom" style='height:{{CustomBar}}px; opacity: {{opacity}}; '>
+	<view class="cu-bar fixed " style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;background: linear-gradient(90deg,rgba(86,145,200,1) 0%,rgba(53,82,255,1) 100%,rgba(4,145,215,1) 100%,rgba(0,64,253,1) 100%);">
+		<navigator class='action' style='top:{{StatusBar}}px; color: #fff;' open-type="navigateBack" delta="1" hover-class="none">
+                <text class='icon-back'></text> 结算
+        </navigator>
+	</view>
+</view>
+<view class='header'>
+	<text>{{json.roomname}}</text>
+</view>
+<view class='block block-fix'>
+	<view class='block-top'>
+		<text data-txt='本场号牌：'>{{json.plate}}</text>
+		<text data-txt='成交设备：'>{{json.cars_num}}台</text>
+	</view>
+	<view class='block-bottom'>
+		<text>结算说明：</text>
+		<text>{{json.settlement}}</text>
+	</view>
+</view>
+<view class='block block-none'>
+	<view class='block-top'>
+		<text data-txt='本场号牌：'>{{json.plate}}</text>
+		<text data-txt='成交设备：'>{{json.cars_num}}台</text>
+	</view>
+	<view class='block-bottom'>
+		<text>结算说明：</text>
+		<text>{{json.settlement}}</text>
+	</view>
+</view>
+<view class='list'>
+	<text class='public-text'>成交设备</text>
+	<block wx:for="{{json.carsList}}" wx:key>
+		<navigator class='list-' url='/pages/models/auction/orderdes/orderdes?id={{item.id}}'>
+			<view class='list-left'>
+				<image src='{{item.mainpic}}' mode='aspectFill'></image>
+				<text>NO: {{item.tid}}</text>
+			</view>
+			<view class='list-right'>
+				<text class='list-right-h1'>{{item.car_name}}</text>
+				<text class='list-right-h2'>{{item.message}}</text>
+				<text class='list-right-h3' data-txt='成交价：'>{{item.price}}</text>
+			</view>
+		</navigator>
+	</block>
+</view>
+<view style='height: 150rpx;'></view>
+<view class='fix'>
+	<navigator class='fix-left' url='/pages/routes/service/service'>
+		<image src='/image/mine-nav-03.png'></image>
+		<text>联系客服</text>
+	</navigator>
+	<view class='fix-right'>
+		<text data-txt='保证金：'>{{json.rfrozen}}</text>
+		<text data-txt='成交总额：'>{{json.money}}</text>
+	</view>
+</view>
+<!-- 全局加载 -->
+<i-spin style="z-index: 990;" fix wx:if="{{fix}}"></i-spin>
+<!-- 登录提示 -->
+<i-toast id="toast" />

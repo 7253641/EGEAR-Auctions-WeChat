@@ -1,0 +1,38 @@
+<!--pages/bail/bail.wxml-->
+<view class="cu-custom" style="height:{{CustomBar}}px;">
+	<view class="cu-bar fixed " style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px; background-color:#f2f2f2;">
+		 <navigator class='action' style='top:{{StatusBar}}px;' open-type="navigateBack" delta="1" hover-class="none">
+                        <text class='icon-back'></text>
+                </navigator>
+		<view class='content' style='top:{{StatusBar}}px;'>
+			保证金记录
+		</view>
+	</view>
+</view>
+<view style="height:{{CustomBar}}px;"></view>
+<block wx:for="{{json}}" wx:key>
+	<navigator class='bail-list' url='/pages/models/baildes/baildes?id={{item.id}}'>
+		<text class='bail-list-h1'>{{item.room_name}}</text>
+		<text class='bail-list-h2' data-text='保证金：'>{{item.deposit}}</text>
+		<text class='bail-list-h3'>{{item.create_time}} </text>
+		<image src='/image/bail-01.png' wx:if="{{item.is_return == 0}}"></image>
+		<image src='/image/bail-03.png' wx:if="{{item.is_return == 1}}"></image>
+	</navigator>
+</block>
+<!-- 暂无数据 -->
+<view class='nodata' wx:if="{{!json.length}}">
+	<image src='/image/nodata.png'></image>
+	<text>暂无数据</text>
+</view>
+<!-- 列表加载 -->
+<view class="loading" wx:if="{{loading}}">
+	<image class='loading_img' src='/image/loading.png'></image>
+	<text>加载中...</text>
+</view>
+<view class="loading" wx:if="{{loadingTest && listJson.length}}">
+	<text>没有更多数据了</text>
+</view>
+<!-- 全局加载 -->
+<i-spin style="z-index: 990;" fix wx:if="{{fix}}"></i-spin>
+<!-- 登录提示 -->
+<i-toast id="toast" />
