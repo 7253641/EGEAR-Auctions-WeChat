@@ -1,0 +1,54 @@
+<!--pages/auction/auction/auction.wxml-->
+<swiper class='header' indicator-dots="true" circular autoplay="true" interval="5000">
+	<block wx:for="{{bannerJson}}" wx:key>
+		<swiper-item>
+			<image src="{{item.pic}}" class="slide-image" mode='aspectFill'/>
+		</swiper-item>
+	</block>
+</swiper>
+<view style='height: 20rpx;'></view>
+<!-- 近期专场拍 -->
+<block wx:for="{{listJson}}" wx:key>
+	<navigator class='auction' url='/pages/models/auction/auctionHall/auctionHall?rid={{item.rid}}'>
+		<image class='auction-img' src='{{item.descimage}}' mode='aspectFill'></image>
+		<view class='auction-yu' wx:if="{{item.status == 0}}">
+			<text>开拍时间：{{item.ontime}}</text>
+			<text>预展中</text>
+		</view>
+		<view class='auction-zh' wx:if="{{item.status == 1}}">
+			<view></view>
+			<text>正在拍</text>
+		</view>
+		<view class='auction-je' wx:if="{{item.status == 2}}">
+			<text>已结束</text>
+		</view>
+		<view class='auction-h1'>
+			<text>{{item.auction_type}}</text>
+			<text>{{item.roomname}}</text>
+		</view>
+		<view class='auction-h2'>
+			<view>
+				<image src='/image/address.png'></image>
+				<text>{{item.address}}</text>
+			</view>
+			<text>{{item.cars_num}}台设备/{{item.hits}}次围观</text>
+		</view>
+	</navigator>
+</block>
+<!-- 暂无数据 -->
+<view class='nodata' wx:if="{{!listJson.length}}">
+	<image src='/image/nodata.png'></image>
+	<text>暂无数据</text>
+</view>
+<!-- 列表加载 -->
+<view class="loading" wx:if="{{loading}}">
+	<image class='loading_img' src='/image/loading.png'></image>
+	<text>加载中...</text>
+</view>
+<view class="loading" wx:if="{{loadingTest && listJson.length}}">
+	<text>没有更多数据了</text>
+</view>
+<!-- 全局加载 -->
+<i-spin style="z-index: 990;" fix wx:if="{{fix}}"></i-spin>
+<!-- 登录提示 -->
+<i-toast id="toast" />

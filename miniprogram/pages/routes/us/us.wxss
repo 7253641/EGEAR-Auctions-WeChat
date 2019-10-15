@@ -1,0 +1,43 @@
+/* pages/us/us.wxss */
+page{
+	background-color: #fff;
+}
+.header{
+	width: 750rpx;
+	height: 350rpx;
+}
+.public-txt{
+	width: 750rpx;
+	height: 78rpx;
+	box-sizing: border-box;
+	padding: 0 30rpx;
+	display: flex;
+	justify-content: flex-start;
+	padding-top: 28rpx;
+	font-size: 32rpx;
+	color: #333;
+	font-weight: 500;
+}
+.us-test{
+	display: inline-block;
+	font-size: 28rpx;
+	color: #666;
+	padding: 0 30rpx;
+	line-height: 50rpx;
+	/* text-align: justify; 
+	text-justify: inter-ideograph; 
+	text-indent: 2em; */
+}
+.license{
+	width: 690rpx;
+	margin-left: 30rpx;
+}
+.bottom{
+	margin-top: 100rpx;
+	width: 750rpx;
+	display: flex;
+	justify-content: center;
+	font-size: 24rpx;
+	color: #ccc;
+	line-height: 100rpx;
+}

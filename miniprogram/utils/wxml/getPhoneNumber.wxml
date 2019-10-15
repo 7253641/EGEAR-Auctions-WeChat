@@ -1,0 +1,4 @@
+<view class="getPhoneNumberLayer"></view>
+<view class="getPhoneNumber-layer">
+    <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">绑定手机号</button>
+</view>

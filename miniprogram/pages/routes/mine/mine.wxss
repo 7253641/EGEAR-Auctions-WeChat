@@ -1,0 +1,156 @@
+/* pages/mine/mine.wxss */
+page{
+	background-color: #fff;
+	position: relative;
+}
+/* ======================
+* top 20px
+======================= */
+.bl-{
+	margin-top: 20rpx;
+}
+/* ======================
+* header
+======================= */
+.header{
+	width: 750rpx;
+	height: 304rpx;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	background-color: #1f6fed;
+    border-radius: 0 0 60rpx 60rpx;
+}
+.nologin{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.nologin button{
+    margin-top: 60rpx;
+    border: 1rpx solid #fff;
+    border-radius: 20rpx;
+    font-size: 30rpx;
+    color: #fff;
+    font-weight: 500;
+    background-color: rgba(0, 0, 0, 0);
+}
+.header .header-head{
+    margin-top: 30rpx;
+	width: 130rpx;
+	height: 130rpx;
+	border-radius: 65rpx;
+	margin-left: 30rpx;
+	border: 5rpx solid #fff;
+}
+.header view{
+	width: 540rpx;
+	height: 130rpx;
+    margin-top: 30rpx;
+	position: relative;
+}
+.header view .header-name{
+	font-size: 36rpx;
+	color: #fff;
+	font-weight: 500;
+	line-height: 50rpx;
+}
+.header view .header-member{
+	width: 160rpx;
+	height: 36rpx;
+	position: absolute;
+	top: 10rpx;
+	left: 120rpx;
+}
+.header view .header-tel{
+	display: block;
+	font-size: 28rpx;
+	color: #fff;
+	position: absolute;
+	bottom: 10rpx;
+	left: 0;
+}
+/* ======================
+* tabs
+======================= */
+.tabs{
+	width: 690rpx;
+	height: 188rpx;
+	box-shadow: 0rpx 2rpx 8rpx 0rpx rgba(0, 0, 0, .15);
+	border-radius: 4rpx;
+	position: absolute;
+	top: 370rpx;
+	left: 30rpx;
+	background-color: #fff;
+	display: flex;
+	justify-content: space-around;
+
+}
+.tabs .tabs-mine{
+	width: 172.5rpx;
+	height: 188rpx;
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: center;
+}
+.tabs .tabs-mine image{
+	width: 58rpx;
+	height: 50rpx;
+}
+.tabs .tabs-mine text{
+	font-size: 30rpx;
+	color: #333;
+	margin-top: 28rpx;
+}
+/* ======================
+* nav
+======================= */
+.nav{
+	width: 690rpx;
+	margin: 0 30rpx;
+	box-shadow: 0rpx 0rpx 8rpx 0rpx rgba(0, 0, 0, 0.15);
+	border-radius: 4rpx;
+	background-color: #fff;
+}
+.nav-01{
+	height: 332rpx;
+	margin-top: -100rpx;
+}
+.nav-02{
+	height: 334rpx;
+	margin-top: 30rpx;
+}
+.nav .nav-block{
+	width: 690rpx;
+	height: 110rpx;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-sizing: border-box;
+}
+.nav .nav-block image{
+	width: 44rpx;
+	height: 44rpx;
+	margin-left: 20rpx;
+}
+.nav .nav-block view{
+	width: 606rpx;
+	height: 110rpx;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1rpx solid #eee;
+}
+.nav .nav-block view text{
+	font-size: 30rpx;
+	color: #333;
+}
+.nav .nav-block view image{
+	width: 10rpx;
+	height: 20rpx;
+	margin-right: 20rpx;
+}
+.nav .nav-block .noneborder{
+	border: 0;
+}

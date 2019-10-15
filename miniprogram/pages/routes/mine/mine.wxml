@@ -1,0 +1,70 @@
+<!--pages/mine/mine.wxml-->
+<!-- header -->
+<view class='header' wx:if="{{authorize}}">
+	<navigator class='nav-block' url='/pages/routes/set/set'>
+		<image class='header-head' src='{{json.logo}}' mode='aspectFill'></image>
+	</navigator>
+	<view>
+		<navigator class='nav-block' url='/pages/routes/set/set'>
+			<text class='header-name'>{{json.legalname}}</text>
+			<image class='header-member' wx:if="{{json.is_real == 0}}" src='/image/noreal.png'></image>
+			<image class='header-member' wx:if="{{json.is_real == 1}}" src='/image/real.png'></image>
+			<text class='header-tel'>Mobile: {{json.mobilephone}}</text>
+		</navigator>
+	</view>
+</view>
+<view class="header nologin" wx:if="{{!authorize}}">
+    <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+</view>
+<!-- tabs -->
+<view class='nav nav-01'>
+	<navigator bindtap="nologin" class='nav-block' url='{{authorize ? "/pages/models/auction/order/order" : "/pages/routes/mine/mine"}}'>
+		<image class='nav-icon' src='/image/mine-nav-06.png'></image>
+		<view>
+			<text>我的订单</text>
+			<image src='/image/go.png'></image>
+		</view>
+	</navigator>
+	<navigator bindtap="nologin" class='nav-block' url='{{authorize ? "/pages/models/auction/bail/bail" : "/pages/routes/mine/mine"}}'>
+		<image class='nav-icon' src='/image/mine-nav-01.png'></image>
+		<view>
+			<text>保证金</text>
+			<image src='/image/go.png'></image>
+		</view>
+	</navigator>
+	<navigator bindtap="nologin" class='nav-block' url='{{authorize ? "/pages/routes/mybid/mybid" : "/pages/routes/mine/mine"}}'>
+		<image class='nav-icon' src='/image/mine-nav-02.png'></image>
+		<view class='noneborder'>
+			<text>我的出价</text>
+			<image src='/image/go.png'></image>
+		</view>
+	</navigator>
+</view>
+<view class='nav nav-02'>
+	<navigator class='nav-block' url='/pages/routes/service/service'>
+		<image class='nav-icon' src='/image/mine-nav-03.png'></image>
+		<view>
+			<text>客户服务</text>
+			<image src='/image/go.png'></image>
+		</view>
+	</navigator>
+	<navigator class='nav-block' url='/pages/routes/us/us'>
+		<image class='nav-icon' src='/image/mine-nav-04.png'></image>
+		<view>
+			<text>关于我们</text>
+			<image src='/image/go.png'></image>
+		</view>
+	</navigator>
+	<navigator bindtap="nologin" class='nav-block' url='{{authorize ? "/pages/routes/set/set" : "/pages/routes/mine/mine"}}'>
+		<image class='nav-icon' src='/image/mine-nav-05.png'></image>
+		<view class='noneborder'>
+			<text>设置</text>
+			<image src='/image/go.png'></image>
+		</view>
+	</navigator>
+</view>
+<!-- <include src="../../../utils/wxml/getPhoneNumber.wxml"/> -->
+<!-- 全局加载 -->
+<i-spin style="z-index: 990;" fix wx:if="{{fix}}"></i-spin>
+<!-- 登录提示 -->
+<i-toast id="toast" />

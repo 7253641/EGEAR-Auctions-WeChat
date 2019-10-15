@@ -1,0 +1,121 @@
+/* pages/login/login.wxss */
+
+page {
+    background-color: #fff;
+}
+
+.input_ {
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0px;
+    color: #bfbfbf;
+}
+
+.login {
+    width: 690rpx;
+    margin: 200rpx 0 0 30rpx;
+}
+
+.login .h1 {
+    font-size: 48rpx;
+    color: #333;
+    font-weight: 600;
+}
+
+.login .tel {
+    width: 660rpx;
+    border-bottom: 1rpx #e5e5e5 solid;
+    display: inline-block;
+    margin-top: 150rpx;
+    position: relative;
+}
+
+.login .tel text {
+    position: absolute;
+    left: 13rpx;
+    bottom: 28rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    font-weight: normal;
+    font-stretch: normal;
+}
+
+.login .tel input {
+    position: absolute;
+    left: 137rpx;
+    bottom: 25rpx;
+    text-align: left;
+}
+
+.login .code {
+    width: 660rpx;
+    border-bottom: 1rpx #e5e5e5 solid;
+    display: inline-block;
+    margin-top: 92rpx;
+    position: relative;
+}
+
+.login .code text:first-of-type {
+    position: absolute;
+    left: 13rpx;
+    bottom: 28rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    font-weight: normal;
+    font-stretch: normal;
+}
+
+.login .code input {
+    position: absolute;
+    width: 200rpx;
+    left: 137rpx;
+    bottom: 25rpx;
+    text-align: left;
+}
+
+.login .code text:last-of-type {
+    position: absolute;
+    right: 13rpx;
+    bottom: 28rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0px;
+    color: #008dff;
+}
+
+.login .btn {
+    display: inline-block;
+    width: 690rpx;
+    height: 94rpx;
+    background: linear-gradient(90deg, rgba(86, 145, 200, 1) 0%, rgba(53, 82, 255, 1) 0%, rgba(4, 145, 215, 1) 100%, rgba(0, 64, 253, 1) 100%);
+    font-size: 36rpx;
+    color: #fff;
+    text-align: center;
+    line-height: 94rpx;
+    margin-top: 60rpx;
+    border-radius: 4rpx;
+}
+
+.login .h2 {
+    /* position: absolute; */
+    width: 690rpx;
+    position: fixed;
+    display: block;
+    bottom: 85rpx;
+    left: 30rpx;
+    text-align: center;
+    font-family: PingFangSC-Regular;
+    font-size: 20rpx;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0rpx;
+    color: #bfbfbf;
+}
+
+.login .blu {
+    color: #1f6fed;
+}

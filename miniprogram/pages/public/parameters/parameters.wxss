@@ -1,0 +1,143 @@
+/* pages/parameters/parameters.wxss */
+.br-{
+	margin-top: 20rpx;
+}
+/* 选项卡 */
+.tabs{
+	position: fixed;
+	left: 0;
+	width: 750rpx;
+	height: 100rpx;
+	background-color: #fff;
+	display: flex;
+	justify-content: space-around;
+	border-bottom: 1rpx solid rgba(0, 0, 0, .1);
+	z-index: 1000;
+}
+.tabs text{
+	font-size: 32rpx;
+	color: #999;
+	display: inline-block;
+	height: 100rpx;
+	line-height: 100rpx;
+}
+.tabs .tabs-choose{
+	color: #1F6FED;
+	border-bottom: 4rpx solid #1F6FED;
+}
+/* 标题 */
+.header{
+	width: 750rpx;
+	height: 220rpx;
+	background-color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.header view{
+	width: 690rpx;
+	height: 180rpx;
+	box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.15);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+.header view text{
+	width: 504rpx;
+	font-size: 36rpx;
+	color: #333;
+	font-weight: 500;
+	text-align: center;
+}
+/* 信息 */
+.info{
+	width: 750rpx;
+	background-color: #fff;
+	padding: 30rpx;
+}
+.info .info-header{
+	width: 690rpx;
+	padding: 30rpx 0 0 0;
+	display: flex;
+	justify-content: center;
+}
+.info .info-header text{
+	font-size: 32rpx;
+	color: #333;
+	font-weight: 500;
+	position: relative;
+}
+.info .info-text{
+	width: 690rpx;
+	height: 84rpx;
+	border-bottom: 1rpx solid #ddd;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.info .info-text text:first-of-type{
+	font-size: 28rpx;
+	color: #999;
+}
+.info .info-text text:last-of-type{
+	font-size: 28rpx;
+	color: #666;
+}
+.info .info-des{
+	margin-top: 20rpx;
+	display: flex;
+	justify-content: space-between;
+}
+.info .info-des text:first-of-type{
+	display: inline-block;
+	width: 140rpx;
+	font-size: 28rpx;
+	color: #999;
+}
+.info .info-des text:last-of-type{
+	display: inline-block;
+	width: 550rpx;
+	font-size: 28rpx;
+	color: #666;
+}
+/* 视频图片 */
+.img{
+	width: 750rpx;
+	background-color: #fff;
+	padding: 0 30rpx 30rpx 30rpx;
+}
+.img .img-block{
+	width: 690rpx;
+	height: 388rpx;
+	margin-top: 30rpx;
+	position: relative;
+}
+.img .img-block .img-block-{
+	width: 690rpx;
+	height: 388rpx;
+}
+.img .img-block .img-block--{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 90rpx;
+	height: 90rpx;
+	margin-top: -45rpx;
+	margin-left: -45rpx;
+}
+/*  */
+.down{
+	width: 750rpx;
+	height: 90rpx;
+	background: linear-gradient(90deg,rgba(86,145,200,1) 0%,rgba(53,82,255,1) 0%,rgba(4,145,215,1) 100%,rgba(0,64,253,1) 100%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 30rpx;
+	color: #fff;
+	font-weight: 500;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+}

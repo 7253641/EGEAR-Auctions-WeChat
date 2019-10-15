@@ -1,0 +1,48 @@
+/* 我要买车/我要卖车/西南二手手机 */
+.nav{
+	width: 750rpx;
+	height: 220rpx;
+	display: flex;
+	justify-content: space-around;
+	align-items: flex-end;
+	margin-top: 30rpx;
+}
+.nav .nav-{
+	width: 210rpx;
+	height: 220rpx;
+	box-shadow: 4rpx 0rpx 8rpx 0rpx rgba(247, 251, 209, .2);
+	border-radius: 4rpx;
+	position: relative;
+}
+.nav .nav- text{
+	position: absolute;
+	top: 20rpx;
+	left: 20rpx;
+	font-size: 28rpx;
+	font-weight: 600;
+}
+.nav .nav- image{
+	width: 164rpx;
+	height: 164rpx;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+.nav .nav01{
+	background-color: #FFFCF5;
+}
+.nav .nav01 text{
+	color: #73B8C9;
+}
+.nav .nav02{
+	background-color: #FFF5F6;
+}
+.nav .nav02 text{
+	color: #DF695F;
+}
+.nav .nav03{
+	background-color: #FFE9D8;
+}
+.nav .nav03 text{
+	color: #E58E60;
+}

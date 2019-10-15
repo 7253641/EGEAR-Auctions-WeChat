@@ -1,0 +1,9 @@
+<!--pages/service/service.wxml-->
+<view class='se-header'>
+	<image src="/image/service.png"></image>
+	<text>欢迎咨询易极客户服务</text>
+</view>
+<view class='se-btn'>
+	<text bindtap='calling'>电话咨询</text>
+	<button open-type="contact" bindcontact="handleContact" >在线咨询</button>
+</view>

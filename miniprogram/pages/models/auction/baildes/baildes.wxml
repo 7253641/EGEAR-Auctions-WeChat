@@ -1,0 +1,14 @@
+<!--pages/baildes/baildes.wxml-->
+<view class='baildes'>
+	<text class='baildes-border' data-text='竞买号牌：'>{{json.tid}}</text>
+	<text data-text='保证金用途：'>{{json.from}}</text>
+	<text data-text='支付时间：'>{{json.create_time}}</text>
+	<text data-text='支付方式：'>{{json.deposit_pay_type}}</text>
+	<text class='baildes-bl' data-text='支付金额：'>{{json.deposit}}</text>
+	<text class='baildes-re' data-text='支付状态：'>{{json.is_return}}</text>
+	<text data-text='保证金描述：'>{{json.desc}}</text>
+</view>
+<!-- 全局加载 -->
+<i-spin style="z-index: 990;" fix wx:if="{{fix}}"></i-spin>
+<!-- 登录提示 -->
+<i-toast id="toast" />

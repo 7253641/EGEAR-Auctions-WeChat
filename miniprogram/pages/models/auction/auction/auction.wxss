@@ -1,0 +1,13 @@
+/* pages/auction/auction/auction.wxss */
+@import "../../../../utils/wxss/auctionlist.wxss";
+page{
+	background-color: #fff;
+}
+.header{
+	width: 750rpx;
+	height: 340rpx;
+}
+.header image{
+	width: 750rpx;
+	height: 340rpx;
+}

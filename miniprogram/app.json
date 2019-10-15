@@ -1,0 +1,71 @@
+{
+	"pages": [
+        
+
+        "pages/routes/index/index",
+        "pages/routes/approve/approve",
+        "pages/routes/mine/mine",
+        "pages/routes/mybid/mybid",
+        "pages/routes/mybiddes/mybiddes",
+        "pages/routes/service/service",
+        "pages/routes/set/set",
+        "pages/routes/us/us",
+
+        "pages/public/login/login",
+        "pages/public/parameters/parameters",
+        "pages/public/video/video",
+
+
+        "pages/models/auction/auction/auction",
+        "pages/models/auction/auctionHall/auctionHall",
+        "pages/models/auction/bail/bail",
+        "pages/models/auction/baildes/baildes",
+        "pages/models/auction/money/money",
+        "pages/models/auction/order/order",
+        "pages/models/auction/orderaccounts/orderaccounts",
+        "pages/models/auction/orderdes/orderdes",
+
+        "pages/models/sale/sale/sale"
+        
+	],
+	"usingComponents": {
+		"i-spin": "../../dist/spin/index",
+		"i-load-more": "../../dist/load-more/index",
+		"i-toast": "../../dist/toast/index"
+	},
+	"window": {
+		"navigationBarBackgroundColor": "#fff",
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "易极环宇"
+	},
+	"tabBar": {
+		"color": "#999",
+		"selectedColor": "#1F6FED",
+		"backgroundColor": "#fff",
+		"borderStyle": "black",
+		"list": [
+			{
+				"pagePath": "pages/routes/index/index",
+				"iconPath": "image/index.png",
+				"selectedIconPath": "image/index-se.png",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/models/auction/auction/auction",
+				"iconPath": "image/auction.png",
+				"selectedIconPath": "image/auction-se.png",
+				"text": "专场拍"
+			},
+			{
+				"pagePath": "pages/routes/mine/mine",
+				"iconPath": "image/mine.png",
+				"selectedIconPath": "image/mine-se.png",
+				"text": "我的"
+			}
+		]
+	},
+	"navigateToMiniProgramAppIdList": [
+		"wxb3dba707d4aced46"
+	],
+	"sitemapLocation": "sitemap.json"
+}

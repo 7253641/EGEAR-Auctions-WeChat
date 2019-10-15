@@ -1,0 +1,34 @@
+/* tabs */
+.tabs{
+	width: 750rpx;
+	height: 78rpx;
+	border-bottom: 1rpx solid #eee;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.tabsFix{
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	width: 750rpx;
+	height: 78rpx;
+	border-bottom: 1rpx solid #eee;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background-color: #fff;
+}
+.tabs text{
+	display: inline-block;
+	height: 78rpx;
+	line-height: 78rpx;
+	font-size: 32rpx;
+	color: #666;
+}
+.tabs .choose{
+	color: #1F6FED;
+	font-weight: 500;
+	border-bottom: 4rpx solid #1F6FED;
+}

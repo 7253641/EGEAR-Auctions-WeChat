@@ -1,0 +1,270 @@
+/* 
+	|----------------------------------------------------------|
+	|	* F: animation							  |
+	|	* A: Black-Jay							 |
+	|	* D: 2019-07-12						       |
+	|---------------------------------------------------------|
+ */
+ /* 
+	1. animation-direction  -----  属性定义是否应该轮流反向播放动画
+	2. animation-name ------- 属性为 @keyframes 动画规定名称
+	3. animation-duration  ----------  属性定义动画完成一个周期所需要的时间，以秒或毫秒计
+	4. animation-timing-function  ----------  规定动画的速度曲线
+			linear	动画从头到尾的速度是相同的
+			ease	默认。动画以低速开始，然后加快，在结束前变慢
+			ease-in	动画以低速开始
+			ease-out	动画以低速结束
+			ease-in-out	动画以低速开始和结束
+			cubic-bezier(n,n,n,n)	在 cubic-bezier 函数中自己的值。可能的值是从 0 到 1 的数值
+	5. animation-fill-mode  ------- 属性规定动画在播放之前或之后，其动画效果是否可见
+			none	不改变默认行为
+			forwards	当动画完成后，保持最后一个属性值（在最后一个关键帧中定义）
+			backwards	在 animation-delay 所指定的一段时间内，在动画显示之前，应用开始属性值（在第一个关键帧中定义）
+			both	向前和向后填充模式都被应用
+  */
+[class*=animation-] {
+        animation-duration: 0.5s;
+        animation-timing-function: ease-out;
+        animation-fill-mode: both;
+}
+
+.animation-fade {
+        animation-name: fade;
+        animation-duration: 0.8s;
+        animation-timing-function: linear;
+}
+
+.animation-scale-up {
+        animation-name: scale-up;
+}
+
+.animation-scale-down {
+        animation-name: scale-down;
+}
+
+.animation-slide-top {
+        animation-name: slide-top;
+}
+
+.animation-slide-bottom {
+        animation-name: slide-bottom;
+}
+
+.animation-slide-left {
+        animation-name: slide-left;
+}
+
+.animation-slide-right {
+        animation-name: slide-right;
+}
+
+.animation-shake {
+        animation-name: shake;
+}
+
+.animation-reverse {
+        animation-direction: reverse;
+}
+
+@keyframes fade {
+        0% {
+                opacity: 0;
+        }
+
+        100% {
+                opacity: 1;
+        }
+}
+
+@keyframes scale-up {
+        0% {
+                opacity: 0;
+                transform: scale(0.2);
+        }
+
+        100% {
+                opacity: 1;
+                transform: scale(1);
+        }
+}
+
+@keyframes scale-down {
+        0% {
+                opacity: 0;
+                transform: scale(1.8);
+        }
+
+        100% {
+                opacity: 1;
+                transform: scale(1);
+        }
+}
+
+@keyframes slide-top {
+        0% {
+                opacity: 0;
+                transform: translateY(-100%);
+        }
+
+        100% {
+                opacity: 1;
+                transform: translateY(0);
+        }
+}
+
+@keyframes slide-bottom {
+        0% {
+                opacity: 0;
+                transform: translateY(100%);
+        }
+
+        100% {
+                opacity: 1;
+                transform: translateY(0);
+        }
+}
+
+@keyframes shake {
+        0%, 100% {
+                transform: translateX(0);
+        }
+
+        10% {
+                transform: translateX(-9px);
+        }
+
+        20% {
+                transform: translateX(8px);
+        }
+
+        30% {
+                transform: translateX(-7px);
+        }
+
+        40% {
+                transform: translateX(6px);
+        }
+
+        50% {
+                transform: translateX(-5px);
+        }
+
+        60% {
+                transform: translateX(4px);
+        }
+
+        70% {
+                transform: translateX(-3px);
+        }
+
+        80% {
+                transform: translateX(2px);
+        }
+
+        90% {
+                transform: translateX(-1px);
+        }
+}
+
+@keyframes slide-left {
+        0% {
+                opacity: 0;
+                transform: translateX(-100%);
+        }
+
+        100% {
+                opacity: 1;
+                transform: translateX(0);
+        }
+}
+
+@keyframes slide-right {
+        0% {
+                opacity: 0;
+                transform: translateX(100%);
+        }
+
+        100% {
+                opacity: 1;
+                transform: translateX(0);
+        }
+}
+/*  tabs  */
+.animation-tabs {
+        animation-name: tabs;
+	animation-timing-function: ease;
+}
+@keyframes tabs {
+        0% {
+                opacity: 0;
+		transform: scale(0.8);
+        }
+
+        100% {
+                opacity: 1;
+		transform: scale(1);
+        }
+}
+/*  button-blue  */
+.animation-button-blue {
+        animation-name: button-blue;
+	animation-timing-function: ease;
+}
+@keyframes button-blue {
+        0% {
+		background: linear-gradient(90deg,rgba(37,60,199,1) 0%,rgba(0,125,186,1) 100%,rgba(0,64,253,1) 100%);
+        }
+
+        100% {
+		background-color: linear-gradient(90deg,rgba(86,145,200,1) 0%,rgba(53,82,255,1) 0%,rgba(4,145,215,1) 100%,rgba(0,64,253,1) 100%);
+        }
+}
+/*  价格  */
+.animation-price {
+        animation-name: price;
+}
+@keyframes price {
+        0% {
+                opacity: 0;
+		transform: scale(10);
+        }
+
+        100% {
+                opacity: 1;
+		transform: scale(1);
+        }
+}
+/*  清除  */
+.animation-clear {
+        animation-name: clear;
+	animation-duration: 5s;
+        animation-timing-function: ease;
+        animation-fill-mode: forwards;
+}
+@keyframes clear {
+        0% {
+                opacity: 1;
+		transform: translateX(100%);
+        }
+
+	10% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+
+	25%{
+		opacity: 1;
+	}
+
+	50%{
+		 opacity: 1;
+	}
+
+	75%{
+		 opacity: 1;
+	}
+
+        100% {
+                opacity: 0;
+        }
+}

@@ -1,0 +1,14 @@
+/* pages/sale/sale/sale.wxss */
+@import "../../../../utils/wxss/salelist.wxss";
+@import "../../../../utils/wxss/tabs.wxss";
+page{
+	background-color: #fff;
+}
+.header{
+	width: 750rpx;
+	height: 340rpx;
+}
+.header image{
+	width: 750rpx;
+	height: 340rpx;
+}

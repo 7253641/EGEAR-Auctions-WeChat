@@ -1,0 +1,11 @@
+<!--pages/us/us.wxml-->
+<image class='header' src='{{json.about_image}}'></image>
+<text class='public-txt'>公司简介</text>
+<text class='us-test'>{{json.about_agreement}}</text>
+<text class='public-txt' wx:if="{{json.about_certificates_image}}">国家认证拍卖资质</text>
+<image class='license' src='{{json.about_certificates_image}}'></image>
+<text class='bottom'>{{json.about_company_name}}</text>
+<!-- 全局加载 -->
+<i-spin style="z-index: 990;" fix wx:if="{{fix}}"></i-spin>
+<!-- 登录提示 -->
+<i-toast id="toast" />

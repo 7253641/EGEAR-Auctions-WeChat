@@ -1,0 +1,300 @@
+<!--pages/models/auction/auctionHall/auctionHall.wxml-->
+<!-- 直播或者图片 -->
+<!-- 判断拍卖会 未开始  正在拍  已结束 -->
+<block wx:if="{{json.auctionInfo.status == 1}}">
+    <!-- 判断是否有直播 -->
+    <block wx:if="{{json.liveParame.live_id}}">
+        <!-- 判断是否开启 -->
+        <block wx:if="{{muduJson.state}}">
+            <video
+                class='live'
+                src="{{muduJson.url}}"
+                controls="false"
+                autoplay="true"
+                show-play-btn="false"
+                show-center-play-btn="false"
+                enable-progress-gesture="false"
+            ></video>
+        </block>
+        <block wx:else>
+            <image class='live' src='{{json.auctionInfo.descimage}}' mode='aspectFill'></image>
+        </block>
+    </block>
+    <block wx:else>
+        <image class='live' src='{{json.auctionInfo.descimage}}' mode='aspectFill'></image>
+    </block>
+</block>
+<block wx:else>
+    <image class='live' src='{{json.auctionInfo.descimage}}' mode='aspectFill'></image>
+</block>
+<!--  -->
+<!-- <view class='live-header'>
+	<view class='live-header-left'>
+		<view>
+			<text>本场设备:<text class='blue'>{{json.auctionInfo.carsNum}}</text></text>
+			<text>保证金:<text class='blue'>{{json.auctionInfo.rfrozen}}</text></text>
+		</view>
+		<view>
+			<text wx:if="{{json.auctionInfo.status == 0}}" data-title='开拍时间：'>{{json.auctionInfo.ontime}}</text>
+			<text wx:if="{{json.auctionInfo.status == 1}}">{{json.auctionInfo.hits}}人围观</text>
+			<text wx:if="{{json.auctionInfo.status == 2}}"> </text>
+		</view>
+	</view>
+	<text wx:if="{{json.auctionInfo.status == 0}}" class='live-header-right'>预展中</text>
+	<text wx:if="{{json.auctionInfo.status == 1}}" class='live-header-right'>正在拍</text>
+	<text wx:if="{{json.auctionInfo.status == 2}}" class='live-header-right'>已结束</text>
+</view> -->
+<!-- tabs -->
+<view class='tabs'>
+	<view>
+		<block wx:for="{{['竞拍规则', '拍品列表', '竞拍大厅']}}" wx:key>
+			<text class="{{tabsIndex == index ? 'tabs-choose animation-tabs' : ''}}" data-index='{{index}}' bindtap='clickTabs'>{{item}}</text>
+		</block>
+	</view>
+</view>
+<view class='public-view'></view>
+<!-- 竞拍规则 -->
+<view class='public-block rule' wx:if="{{tabsIndex == 0}}">
+    <!-- 提示S -->
+    <block wx:if="{{json.auctionInfo.status != 2}}">
+        <block wx:if="{{json.auctionInfo.status == 0}}">
+            <view class='prompt' wx:if="{{promptJson.pro01}}">
+                <view>
+                    <text>想要去线下拍卖会吗？</text>
+                    <navigator url='/pages/routes/service/service'>联系客服 ></navigator>
+                </view>
+                <image data-x='promptJson.pro01' src='/image/x.png' bindtap='delPrompt'></image>
+            </view>
+        </block>
+        <block wx:if="{{json.isLogin == 0}}">
+            <view class='prompt'>
+                <view>
+                    <text>您还没有登录</text>
+                    <navigator open-type='switchTab' url='/pages/routes/mine/mine'>去授权登录 ></navigator>
+                </view>
+            </view>
+        </block>
+        <block wx:if="{{json.isLogin == 1}}">
+            <view class='prompt' wx:if="{{promptJson.pro02 && json.isAucBid == 0}}">
+                <view>
+                    <text>您还没有交本场拍卖会保证金</text>
+                    <navigator url='/pages/models/auction/money/money?rid={{json.auctionInfo.rid}}'>去交保证金 ></navigator>
+                </view>
+                <image data-x='promptJson.pro02' src='/image/x.png' bindtap='delPrompt'></image>
+            </view>
+            <view class='prompt' wx:if="{{promptJson.pro03 && json.isReal == 0}}">
+                <view>
+                    <text>您还没有实名认证</text>
+                    <navigator url='/pages/routes/approve/approve'>去实名认证 ></navigator>
+                </view>
+                <image data-x='promptJson.pro03' src='/image/x.png' bindtap='delPrompt'></image>
+            </view>
+        </block>
+    </block>
+    <view class='prompt'>
+        <view>
+            <text>还想看看其他拍卖会吗？</text>
+            <navigator open-type="reLaunch" url='/pages/routes/index/index'>返回首页 ></navigator>
+        </view>
+    </view>
+    <!-- 提示E -->
+    <text class='public-header'>拍卖会信息</text>
+    <view class="auction-info">
+        <view>
+            <text>拍卖状态：</text>
+            <text wx:if="{{json.auctionInfo.status == 0}}" class='auction-info-bl'>预展中</text>
+            <text wx:if="{{json.auctionInfo.status == 1}}" class='auction-info-bl'>正在拍</text>
+            <text wx:if="{{json.auctionInfo.status == 2}}" class='auction-info-bl'>已结束</text>
+        </view>
+        <view>
+            <text>本场设备：</text>
+            <text>{{json.auctionInfo.carsNum}}</text>
+        </view>
+        <view>
+            <text>保证金：</text>
+            <text class="auction-info-bl">{{json.auctionInfo.rfrozen}}</text>
+        </view>
+        <view wx:if="{{json.auctionInfo.status == 0}}">
+            <text>开拍时间：</text>
+            <text>{{json.auctionInfo.ontime}}</text>
+        </view>
+        <view>
+            <text>地址：</text>
+            <text>{{json.auctionInfo.address}}</text>
+        </view>
+    </view>
+	<text class='public-header' wx:if="{{json.auctionInfo.agreement}}">拍卖会说明</text>
+	<view class='rule-ex' wx:if="{{json.auctionInfo.agreement}}">
+		<text>{{json.auctionInfo.agreement}}</text>
+	</view>
+	<text class='public-header' wx:if="{{json.auctionInfo.auctioneersList}}">本场拍卖师</text>
+	<block wx:if="{{json.auctionInfo.auctioneersList}}" wx:for="{{json.auctionInfo.auctioneersList}}" wx:key>	
+		<view class='rule-person'>
+			<view class='rule-person-left'>
+				<image src='{{item.head_img}}' mode='aspectFill'></image>
+				<text class='rule-person_num'>证书号：{{item.ano}}</text>
+			</view>
+			<view class='rule-person-right'>
+				<text class='rule-person_name'>{{item.aname}}</text>
+				<text class='rule-person_state'>{{item.alevel}}</text>
+				<text class='rule-person_des'>{{item.adesc}}</text>
+			</view>
+		</view>
+	</block>
+</view>
+<!-- 拍品列表 -->
+<view class='public-block list' wx:if="{{tabsIndex == 1}}">
+	<block wx:for="{{listJson}}" wx:key>
+		<navigator class='list-view' url='/pages/public/parameters/parameters?a_id={{item.a_id}}' id='list{{item.a_id}}'>
+			<view class='list-view-left'>
+				<view class='list-view-left-num'>
+					<text>{{item.tid}}</text>
+				</view>
+				<view class='list-view-left-img'>
+					<image src='{{item.carInfo.p_mainpic}}' mode='aspectFill'></image>
+					<block wx:if="{{item.is_stop == 0}}">
+						<view class='list-view-left-state-ing' wx:if="{{item.is_sale == 1}}">正在拍</view>
+						<view class='list-view-left-state-success' wx:if="{{item.is_sale == 2}}">成交</view>
+						<view class='list-view-left-state-end' wx:if="{{item.is_sale == 3}}">流拍</view>
+					</block>
+					<block wx:if="{{item.is_stop == 1}}">
+						<view class='list-view-left-state-end' wx:if="{{item.status == 3}}">撤拍</view>
+					</block>
+				</view>
+			</view>
+			<view class='list-view-right'>
+				<text class='list-view_name'>{{item.carInfo.p_allname}}</text>
+				<text class='list-view_prems'>{{item.carInfo.message}}</text>
+				<text class='list-view_state'>{{item.auction_type}}</text>
+				<text class='list-view_price' data-txt="起拍价：">{{item.price}}</text>
+			</view>
+		</navigator>
+	</block>
+	<!-- 暂无数据 -->
+	<view class='nodata' wx:if="{{!listJson.length}}">
+		<image src='/image/nodata.png'></image>
+		<text>暂无数据</text>
+	</view>
+	<!-- 列表加载 -->
+	<view class="loading" wx:if="{{loading.loading}}">
+		<image class='loading_img' src='/image/loading.png'></image>
+		<text>加载中...</text>
+	</view>
+	<view class="loading" wx:if="{{loading.loadingTest && listJson.length}}">
+		<text>没有更多数据了</text>
+	</view>
+</view>
+<!-- 竞拍大厅 -->
+<view class='public-block hall' wx:if="{{tabsIndex == 2 && nowJson != null}}">
+	<text class='public-header'>当前拍品</text>
+	<!-- --------------------------------------------nowJson------------------------------------------------------- -->
+	<navigator class='list-view border-none padding-view' url='/pages/public/parameters/parameters?a_id={{nowJson.a_id}}'>
+		<view class='list-view-left'>
+			<view class='list-view-left-num'>
+				<text>{{nowJson.tid}}</text>
+			</view>
+			<view class='list-view-left-img'>
+				<image src='{{nowJson.mainpic}}' mode='aspectFill'></image>
+			</view>
+		</view>
+		<view class='list-view-right'>
+			<text class='list-view_name'>{{nowJson.car_name}}</text>
+			<text class='list-view_prems'>{{nowJson.message}}</text>
+			<text class='list-view_now'>当前价：<text class='lar animation-price'>{{nowJson.price / 10000}}</text>万元</text>
+			<text class='list-view_num'>出价：<text class='lar animation-price'>{{nowJson.bidCount}}</text>次</text>
+		</view>
+	</navigator>
+	<!-- --------------------------------------------nowJson------------------------------------------------------- -->
+	<text class='public-header'>出价列表</text>
+	<!-- --------------------------------------------bidJson------------------------------------------------------- -->
+	<view class='hall-list'>
+		<view class='hall-list-block' wx:for="{{bidJson}}" wx:key wx:if="{{bidJson.length}}">
+			<text class='{{index == 0 ? "lar" : ""}}'>{{item.come_from}}</text>
+			<text class='{{index == 0 ? "lar" : ""}}'>{{item.price}}</text>
+			<text class='{{index == 0 ? "lar" : ""}}'>{{item.create_time}}</text>
+			<text class='lar' wx:if="{{index == 0}}">领先</text>
+			<text wx:if="{{index != 0}}">落后</text>
+		</view>
+		<view class='hall-list-nodata' wx:if="{{!bidJson.length}}">
+			<text>暂无出价记录</text>
+		</view>
+	</view>
+	<!-- --------------------------------------------bidJson------------------------------------------------------- -->
+	<view class='hall_'>
+		<text class='public-header_fix'>快速出价</text>
+	<!-- --------------------------------------------nowJson------------------------------------------------------- -->
+		<view class='hall-tabs'>
+			<block wx:for="{{nowJson.ladder}}" wx:key>
+				<text class='{{priceIndex == index ? "priceBlue" : ""}}'  data-index='{{index}}' data-price='{{item}}' bindtap='clickPrice'>{{item}}</text>
+			</block>
+		</view>
+	<!-- --------------------------------------------nowJson------------------------------------------------------- -->
+		<view class='hall-price'>
+			<text>我的预出价：<text class='lar'>{{myFuturePrice / 10000}}</text>万元</text>
+			<text wx:if="{{myPrice}}">我的出价：<text class='lar'>{{myPrice / 10000}}</text>万元</text>
+		</view>
+        <block wx:if="{{json.auctionInfo.status != 1}}">
+            <text class='hall-btn gra'>出价</text>
+        </block>
+        <block wx:else>
+            <text class='hall-btn gra' wx:if="{{!bidBtn}}">设备现场处理中</text>
+            <view class='hall-btn bl' hover-class="animation-button-blue" bindtap='bid' wx:if="{{bidBtn}}">出价</view>
+        </block>
+	</view>
+</view>
+<!-- 蒙板 -->
+<!-- 判断是否登录 -->
+<block wx:if="{{tabsIndex == 2}}">
+    <block wx:if="{{json.isLogin == 0}}">
+        <view class='hall-layer' style='height:{{PageHeight}}px;'>
+            <view>
+                <image src="/image/hall-login.png"></image>
+                <text>您尚未登录</text>
+            </view>
+            <button class="hall-layer-bottom" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+        </view>
+    </block>
+    <block wx:if="{{json.isLogin == 1}}">
+        <block wx:if="{{json.isReal == 0}}">
+            <view class='hall-layer' style='height:{{PageHeight}}px;'>
+                <view>
+                    <image src="/image/hall-approve.png"></image>
+                    <text>您尚未实名认证</text>
+                </view>
+                <navigator class="hall-layer-bottom" url='/pages/routes/approve/approve'>申请实名认证</navigator>
+            </view>
+        </block>
+        <block wx:if="{{json.isReal == 1}}">
+            <view class='hall-layer' style='height:{{PageHeight}}px;' wx:if="{{json.isAucBid == 0}}">
+                <view>
+                    <image src="/image/hall-money.png"></image>
+                    <text>您尚未支付保证金</text>
+                </view>
+                <navigator class="hall-layer-bottom" url='/pages/models/auction/money/money?rid={{json.auctionInfo.rid}}'>请支付保证金</navigator>
+            </view>
+        </block>
+    </block>
+</block>
+<!-- 竞拍大厅 所有设备处理中请稍后 -->
+<view class='hall-nodata' wx:if="{{tabsIndex == 2 && nowJson == null}}">
+	<text>设备准备中,请稍后...</text>
+</view>
+<!-- 竞拍大厅➕底 -->
+<view class='bottomblock' wx:if="{{tabsIndex == 2}}"></view>
+<!-- 拍卖师喊话 -->
+<view class='shout'>
+	<block wx:for="{{shoutJson}}" wx:key>
+		<view class='animation-clear'>
+			<image src='/image/auctionHallnotice.png'></image>
+			<text>{{item}}</text>
+		</view>
+	</block>
+</view>
+<!-- 拍卖师喊话测试按钮 -->
+<!-- <text class='shoutTest' bindtap='showShoutTest'>拍卖师喊话测试</text> -->
+<!-- 全局加载 -->
+<i-spin style="z-index: 990;" fix wx:if="{{fix}}"></i-spin>
+<!-- 登录提示 -->
+<i-toast id="toast" />
+
+

@@ -1,0 +1,9 @@
+<!--pages/video/video.wxml-->
+<view class='video' style='top: {{CustomBar}}px;'>
+	<video src='{{src}}' bindplay='play'></video> 
+</view>
+<view class='down'>
+	<text bindtap='downLoad'>下载视频</text>
+</view>
+<!-- 登录提示 -->
+<i-toast id="toast" />

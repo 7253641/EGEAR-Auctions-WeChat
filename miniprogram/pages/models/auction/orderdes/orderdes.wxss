@@ -1,0 +1,185 @@
+/* pages/auction/orderdes/orderdes.wxss */
+page{
+	background-color: #f2f2f2;
+}
+.header{
+	width: 750rpx;
+	height: 214rpx;
+	background: linear-gradient(90deg,rgba(86,145,200,1) 0%,rgba(53,82,255,1) 100%,rgba(4,145,215,1) 100%,rgba(0,64,253,1) 100%);
+	position: relative;
+}
+.header .header-h1{
+	position: absolute;
+	bottom: 98rpx;
+	left: 90rpx;
+	font-size: 28rpx;
+	color: #fff;
+}
+.header .header-h2{
+	position: absolute;
+	bottom: 60rpx;
+	left: 90rpx;
+	font-size: 20rpx;
+	color: #fff;
+}
+.header image{
+	position: absolute;
+	width: 176rpx;
+	height: 138rpx;
+	bottom: 30rpx;
+	right: 104rpx;
+}
+/*  */
+.des-info{
+	width: 750rpx;
+	box-shadow: 0rpx 0rpx 8rpx 0rpx rgba(0, 0, 0, 0.15);
+	position: relative;
+	padding-bottom: 30rpx;
+	background-color: #fff;
+}
+.des-info .des-info-pic{
+	position: absolute;
+	width: 170rpx;
+	height: 164rpx;
+	top: 20rpx;
+	right: 20rpx;
+}
+.des-info .des-info-top{
+	width: 750rpx;
+	height: 92rpx;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.des-info .des-info-top text{
+	margin-left: 30rpx;
+	font-size: 32rpx;
+	color: #333;
+}
+.des-info .des-info-content{
+	margin: 0 30rpx;
+	display: flex;
+	justify-content: space-between;
+}
+.des-info .des-info-content .des-info-left{
+	width: 184rpx;
+	height: 172rpx;
+	position: relative;
+}
+.des-info .des-info-content .des-info-left image{
+	width: 184rpx;
+	height: 172rpx;
+	border-radius: 6rpx;
+}
+.des-info .des-info-content .des-info-left text{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 184rpx;
+	height: 40rpx;
+	text-align: center;
+	line-height: 40rpx;
+	color: #fff;
+	font-size: 24rpx;
+	background: linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%);
+	border-radius: 0 0 6rpx 6rpx;
+}
+.des-info .des-info-content .des-info-right{
+	width: 486rpx;
+	height: 172rpx;
+	position: relative;
+}
+.des-info .des-info-content .des-info-right .des-info-right_h1{
+	display: block;
+	width: 480rpx;
+	font-size: 28rpx;
+	color: #333;
+	font-weight: 500;
+	overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+}
+.des-info .des-info-content .des-info-right .des-info-right_h2{
+	display: block;
+	width: 480rpx;
+	font-size: 26rpx;
+	color: #666;
+	margin-top: 18rpx;
+	overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+}
+.des-info .des-info-content .des-info-right view{
+	width: 486rpx;
+	display: flex;
+	justify-content: space-between;
+	position: absolute;
+	bottom: 8rpx;
+}
+.des-info .des-info-content .des-info-right view text:first-of-type{
+	font-size: 26rpx;
+	color: #1F6FED;
+	font-weight: 500;
+}
+.des-info .des-info-content .des-info-right view text:first-of-type::before{
+	content: attr(data-text);
+	font-size: 22rpx;
+	color: #999;
+	font-weight: 400;
+}
+.des-info .des-info-content .des-info-right view text:last-of-type{
+	font-size: 22rpx;
+	color: #999;
+}
+/*  */
+.bid{
+	width: 750rpx;
+	box-shadow: 0rpx 0rpx 8rpx 0rpx rgba(0, 0, 0, 0.15);
+	margin-top: 30rpx;
+	background-color: #fff;
+}
+.bid .bid-header{
+	height: 92rpx;
+	font-size: 32rpx;
+	color: #333;
+	font-weight: 500;
+	margin-left: 30rpx;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+.bid .bid-header::before{
+	content: '';
+	width: 20rpx;
+	height: 32rpx;
+	border-left: 6rpx solid #1F6FED;
+}
+.bid .bid-list{
+	width: 690rpx;
+	margin-left: 30rpx;
+}
+.bid .bid-list view{
+	width: 690rpx;
+	height: 70rpx;
+}
+.bid .bid-list view text{
+	display: inline-block;
+	width: 180rpx;
+	height: 70rpx;
+	text-align: center;
+	line-height: 70rpx;
+	font-size: 26rpx;
+	color: #666;
+}
+.bid .bid-list view text:last-of-type{
+	display: inline-block;
+	width: 330rpx;
+	height: 70rpx;
+}
+.bid .bid-list .first{
+	border-bottom: 1rpx solid #eee;
+}
+.bid .bid-list .first text{
+	font-size: 24rpx;
+	color: #999;
+}

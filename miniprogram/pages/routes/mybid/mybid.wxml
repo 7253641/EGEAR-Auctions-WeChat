@@ -1,0 +1,29 @@
+<!--pages/mybid/mybid.wxml-->
+<block wx:for="{{json}}" wx:key>
+	<navigator class='bid-list' url='/pages/routes/mybiddes/mybiddes?rid={{item.rid}}'>
+		<text class='bid-list-h1'>{{item.room_name}}</text>
+		<text class='bid-list-h2' data-text='开拍时间：'>{{item.ontime}}</text>
+		<text class='bid-list-price' data-text='保证金：'>{{item.rfrozen}}</text>
+		<view>
+			<text data-text='参拍设备：'>{{item.bidauc_num}}</text>
+			<text data-text='出价次数：'>{{item.bidrecord_num}}</text>
+		</view>
+	</navigator>
+</block>
+<!-- 暂无数据 -->
+<view class='nodata' wx:if="{{!json.length}}">
+	<image src='/image/nodata.png'></image>
+	<text>暂无数据</text>
+</view>
+<!-- 列表加载 -->
+<view class="loading" wx:if="{{loading}}">
+	<image class='loading_img' src='/image/loading.png'></image>
+	<text>加载中...</text>
+</view>
+<view class="loading" wx:if="{{loadingTest && listJson.length}}">
+	<text>没有更多数据了</text>
+</view>
+<!-- 全局加载 -->
+<i-spin style="z-index: 990;" fix wx:if="{{fix}}"></i-spin>
+<!-- 登录提示 -->
+<i-toast id="toast" />

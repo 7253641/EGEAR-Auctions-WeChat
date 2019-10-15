@@ -1,0 +1,17 @@
+<!--pages/auction/money/money.wxml-->
+<view class='header'>
+	<text class='header-h1'>{{json.account_name}}</text>
+	<text class='header-h2'>{{json.account_number}}</text>
+	<text class='header-h3'>{{json.opening_bank}}</text>
+	<image src='/image/bank.png'></image>
+</view>
+<view class='txt'>
+	<text class='txt-'>温馨提示</text>
+	<text>{{json.bank_message}}</text>
+</view>
+<navigator class='btn' url='/pages/routes/service/service'>联系客服</navigator>
+<!-- 全局加载 -->
+<i-spin style="z-index: 990;" fix wx:if="{{fix}}"></i-spin>
+<!-- 登录提示 -->
+<i-toast id="toast" />
+

@@ -1,0 +1,39 @@
+<!--pages/set/set.wxml-->
+<view class='set-top'>
+	<view class='set-top-header'>
+		<image src='{{json.logo}}' mode='aspectFill'></image>
+		<view>
+			<text>{{json.legalname}}</text>
+			<text>{{json.mobilephone}}</text>
+		</view>
+	</view>
+	<navigator class='set-top-address' url='' bindtap='btnAddress'>
+		<text>我的收货地址</text>
+		<image src='/image/go.png'></image>
+	</navigator>
+</view>
+<view class='set-bottom'>
+	<navigator url='/pages/routes/approve/approve'>
+		<text>实名认证</text>
+		<view>
+			<text>{{json.legalname}}</text>
+			<image src='/image/noreal.png' wx:if="{{json.is_real == 0}}"></image>
+			<image src='/image/real.png' wx:if="{{json.is_real == 1}}"></image>
+			<image src='/image/go.png'></image>
+		</view>
+	</navigator>
+	<navigator url='' bindtap='btnMobile'>
+		<text>绑定手机号</text>
+		<text>{{json.mobilephone}}</text>
+	</navigator>
+    <navigator url='' bindtap='btnClear'>
+		<text>退出登录</text>
+		<view>
+            <image src='/image/go.png'></image>
+        </view>
+	</navigator>
+</view>
+<!-- 全局加载 -->
+<i-spin style="z-index: 990;" fix wx:if="{{fix}}"></i-spin>
+<!-- 登录提示 -->
+<i-toast id="toast" />

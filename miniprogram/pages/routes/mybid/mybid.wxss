@@ -1,0 +1,77 @@
+/* pages/mybid/mybid.wxss */
+page{
+	background-color: #f2f2f2;
+}
+.bid-list{
+	width: 690rpx;
+	height: 290rpx;
+	box-shadow: 0rpx 0rpx 8rpx 0rpx rgba(0, 0, 0, 0.15);
+	border-radius: 20rpx;
+	margin-left: 30rpx;
+	margin-top: 30rpx;
+	box-sizing: border-box;
+	background-color: #fff;
+	position: relative;
+}
+.bid-list .bid-list-h1{
+	display: block;
+	width: 630rpx;
+	font-size: 36rpx;
+	color: #333;
+	overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+	position: absolute;
+	left: 30rpx;
+	top: 30rpx;
+}
+.bid-list .bid-list-h2{
+	display: block;
+	font-size: 28rpx;
+	color: #666;
+	position: absolute;
+	top: 110rpx;
+	left: 30rpx;
+}
+.bid-list .bid-list-h2::before{
+	content: attr(data-text);
+	font-size: 28rpx;
+	color: #666;
+	font-weight: 400;
+}
+.bid-list .bid-list-price{
+	display: block;
+	font-size: 28rpx;
+	color: #1F6FED;
+	font-weight: 500;
+	position: absolute;
+	left: 30rpx;
+	bottom: 90rpx;
+}
+.bid-list .bid-list-price::before{
+	content: attr(data-text);
+	font-size: 28rpx;
+	color: #666;
+	font-weight: 400;
+}
+.bid-list view{
+	position: absolute;
+	width: 630rpx;
+	bottom: 30rpx;
+	left: 30rpx;
+}
+.bid-list view text{
+	font-size: 28rpx;
+	color: #1F6FED;
+	font-weight: 500;
+}
+.bid-list view text:last-of-type{
+	position: absolute;
+	left: 234rpx;
+}
+.bid-list view text::before{
+	content: attr(data-text);
+	font-size: 28rpx;
+	color: #666;
+	font-weight: 400;
+}

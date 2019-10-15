@@ -1,0 +1,71 @@
+<!--pages/parameters/parameters.wxml-->
+<view class='tabs' style="top:{{CustomBar}}px;">
+	<block wx:for="{{['基本参数','图片/视频']}}" wx:key>
+		<text class='{{tabsIndex == index ? "tabs-choose" : ""}}' data-index='{{index}}' bindtap='onTabs'>{{item}}</text>
+	</block>
+</view>
+<view style='height:100rpx;'></view>
+<view class='header'>
+	<view>
+		<text>{{json.carInfo.p_allname}}</text>
+	</view>
+</view>
+<view class='info' wx:if="{{tabsIndex == 0 && json.carInfo.message_json.basicMsg}}">
+	<view class='info-header'>
+		<text class='ye'>基本信息</text>
+	</view>
+	<block wx:for="{{json.carInfo.message_json.basicMsg}}" wx:key>
+		<view class='info-text'>
+			<text>{{item.name}}</text>
+			<text>{{item.value}}</text>
+		</view>
+	</block>
+</view>
+<view class='info br-' wx:if="{{tabsIndex == 0 && json.carInfo.message_json.attrMsg}}">
+	<view class='info-header'>
+		<text class='gr'>拍品信息</text>
+	</view>
+	<block wx:for="{{json.carInfo.message_json.attrMsg}}" wx:key>
+		<view class='info-text'>
+			<text>{{item.name}}</text>
+			<text>{{item.value}}</text>
+		</view>
+	</block>
+</view>
+<view class='info br-' wx:if="{{tabsIndex == 0 && json.carInfo.message_json.orderMsg}}">
+	<view class='info-header'>
+		<text class='bl'>其他信息</text>
+	</view>
+	<block wx:for="{{json.carInfo.message_json.orderMsg}}" wx:key>
+		<view class='info-des'>
+			<text>{{item.name}}</text>
+			<text>{{item.value}}</text>
+		</view>
+	</block>
+</view>
+<view class='img info' wx:if="{{tabsIndex == 1}}">
+	<view class='info-header' wx:if="{{json.carInfo.video_all.length}}">
+		<text class='bl'>拍品视频</text>
+	</view>
+	<block wx:for="{{json.carInfo.video_all}}" wx:key>
+		<navigator class='img-block' url='/pages/public/video/video?src={{item}}'>
+			<image class='img-block-' src='{{item}}?vframe/jpg/offset/0/w/800/h/600' mode='aspectFill'></image>
+			<image class='img-block--' src='/image/play.png'></image>
+		</navigator>
+	</block>
+	<view class='info-header'>
+		<text class='bl'>拍品图片</text>
+	</view>
+	<block wx:for="{{json.carInfo.img_all}}" wx:key>
+		<view class='img-block'>
+			<image class='img-block-' src='{{item}}' data-url='{{item}}' mode='aspectFill' bindtap='previewImage'></image>
+		</view>
+	</block>
+</view>
+<view style='height: 100rpx; background-color: #fff;'></view>
+<view wx:if="{{tabsIndex == 1}}" style='height: 90rpx;'></view>
+<text class='down' wx:if="{{tabsIndex == 1}}" bindtap='down'>下载所有图片</text>
+<!-- 全局加载 -->
+<i-spin style="z-index: 990;" fix wx:if="{{fix}}"></i-spin>
+<!-- 登录提示 -->
+<i-toast id="toast" />

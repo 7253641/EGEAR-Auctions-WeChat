@@ -1,0 +1,37 @@
+<!--pages/mybiddes/mybiddes.wxml-->
+<block wx:for="{{jsonList}}" wx:key>
+	<navigator class='bid-list' url='/pages/public/parameters/parameters?a_id={{item.aid}}'>
+		<view class='bid-list-left'>
+			<image src='{{item.mainpic}}' mode='aspectFill'></image>
+			<text>NO: {{item.tid}}</text>
+		</view>	
+		<view class='bid-list-right'>
+			<text class='bid-list-right_h1'>{{item.car_name}}</text>
+			<text class='bid-list-right_h2'>{{item.message}}</text>
+			<view class='bid-list-right-block'>
+				<text data-text='最高价：'>{{item.first_price}}</text>
+				<text data-text='出价次数：'>{{item.bidcar_num}}次</text>
+			</view>
+			<view class='bid-list-right-block bo'>
+				<text data-text='成交价：'>{{item.deal_price}}</text>
+			</view>
+		</view>
+	</navigator>
+</block>
+<!-- 暂无数据 -->
+<view class='nodata' wx:if="{{!jsonList.length}}">
+	<image src='/image/nodata.png'></image>
+	<text>暂无数据</text>
+</view>
+<!-- 列表加载 -->
+<view class="loading" wx:if="{{loading}}">
+	<image class='loading_img' src='/image/loading.png'></image>
+	<text>加载中...</text>
+</view>
+<view class="loading" wx:if="{{loadingTest && listJson.length}}">
+	<text>没有更多数据了</text>
+</view>
+<!-- 全局加载 -->
+<i-spin style="z-index: 990;" fix wx:if="{{fix}}"></i-spin>
+<!-- 登录提示 -->
+<i-toast id="toast" />

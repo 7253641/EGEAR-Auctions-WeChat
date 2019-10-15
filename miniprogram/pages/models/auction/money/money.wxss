@@ -1,0 +1,62 @@
+/* pages/auction/money/money.wxss */
+page{
+	background-color: #fff;
+}
+.header{
+	width: 750rpx;
+	height: 252rpx;
+	background: linear-gradient(90deg,rgba(86,145,200,1) 0%,rgba(53,82,255,1) 100%,rgba(4,145,215,1) 100%,rgba(0,64,253,1) 100%);
+	position: relative;
+}
+.header text{
+	font-size: 28rpx;
+	color: #fff;
+	position: absolute;
+	left: 30rpx;
+}
+.header .header-h1{
+	bottom: 146rpx;
+}
+.header .header-h2{
+	bottom: 90rpx;
+}
+.header .header-h3{
+	bottom: 34rpx;
+}
+.header image{
+	position: absolute;
+	width: 250rpx;
+	height: 270rpx;
+	top: 120rpx;
+	right: 48rpx;
+}
+.txt{
+	width: 690rpx;
+	margin-left: 30rpx;
+	margin-top: 68rpx;
+}
+.txt .txt-{
+	font-size: 26rpx;
+	color: #666;
+	line-height: 36rpx;
+}
+.txt text{
+	display: block;
+	font-size: 28rpx;
+	color: #333;
+	line-height: 52rpx;
+}
+.btn{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 750rpx;
+	height: 98rpx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 36rpx;
+	color: #fff;
+	font-weight: 500;
+	background: linear-gradient(90deg,rgba(86,145,200,1) 0%,rgba(53,82,255,1) 0%,rgba(4,145,215,1) 100%,rgba(0,64,253,1) 100%);
+}
