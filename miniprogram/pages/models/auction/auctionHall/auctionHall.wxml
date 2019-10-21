@@ -186,6 +186,11 @@
 </view>
 <!-- 竞拍大厅 -->
 <view class='public-block hall' wx:if="{{tabsIndex == 2 && nowJson != null}}">
+	<block wx:if="{{json.auctionInfo.status == 1}}">
+		<block wx:if="{{json.liveParame.live_id}}">
+			<text class="text-notic">注：视频会有1-20秒的延时，仅作为参考。建议您看出价区域的价格实时变化。</text>
+		</block>
+	</block>
 	<text class='public-header'>当前拍品</text>
 	<!-- --------------------------------------------nowJson------------------------------------------------------- -->
 	<navigator class='list-view border-none padding-view' url='/pages/public/parameters/parameters?a_id={{nowJson.a_id}}'>

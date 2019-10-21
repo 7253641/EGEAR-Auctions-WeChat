@@ -1,6 +1,6 @@
 module.exports = {
 	post: post,
-    config: configProd,
+	config: configProd,
 	smallPrompt: smallPrompt,
 }
 

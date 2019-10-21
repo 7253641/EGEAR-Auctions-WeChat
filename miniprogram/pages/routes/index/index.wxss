@@ -23,11 +23,10 @@ page {
 
 .header swiper image {
     width: 750rpx;
-    height: 400rpx;
+    height: 300rpx;
 }
 
 .header .header-notice {
-    width: 750rpx;
     height: 82rpx;
     position: absolute;
     bottom: 0;
@@ -35,8 +34,8 @@ page {
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
     box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.1);
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    align-items: center; 
+	justify-content: space-between;
 }
 
 .header .header-notice image {
@@ -46,10 +45,14 @@ page {
 }
 
 .header .header-notice swiper {
-    width: 670rpx;
+	display: inline-block;
+	width: 1000rpx;
+	overflow: hidden;
+	white-space: nowrap;
     height: 82rpx;
     font-size: 28rpx;
     color: #fff;
+	line-height: 1;
     padding-top: 30rpx;
     box-sizing: border-box;
 }

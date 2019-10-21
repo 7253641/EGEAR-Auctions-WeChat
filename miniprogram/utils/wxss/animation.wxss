@@ -27,7 +27,10 @@
         animation-timing-function: ease-out;
         animation-fill-mode: both;
 }
-
+.animation-wordloop{
+	animation-name: wordloop;
+	animation: 15s wordloop linear infinite normal;
+}
 .animation-fade {
         animation-name: fade;
         animation-duration: 0.8s;
@@ -64,6 +67,17 @@
 
 .animation-reverse {
         animation-direction: reverse;
+}
+
+@keyframes wordloop {
+        0% {
+                transform: translateX(750rpx);
+
+        }
+
+        100% {
+                transform: translateX(-100%);
+        }
 }
 
 @keyframes fade {
