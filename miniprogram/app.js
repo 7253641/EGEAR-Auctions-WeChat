@@ -1,4 +1,5 @@
 //app.js
+const ald = require('./utils/js/ald-stat.js');
 //登录
 const login = require('/utils/js/wxLogin.js');
 App({
