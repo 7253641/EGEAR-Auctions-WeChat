@@ -35,7 +35,7 @@ page {
     box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center; 
-	justify-content: space-between;
+    justify-content: space-between;
 }
 
 .header .header-notice image {
@@ -46,9 +46,9 @@ page {
 
 .header .header-notice swiper {
 	display: inline-block;
-	width: 1000rpx;
+	width: 690rpx;
 	overflow: hidden;
-	white-space: nowrap;
+
     height: 82rpx;
     font-size: 28rpx;
     color: #fff;
