@@ -160,7 +160,7 @@ Page({
             token: that.data.Token
 		}).then(data => {
 			let item = data.data.data.data;
-			console.log("✨拍卖大厅success信息： ", item);
+			// console.log("✨拍卖大厅success信息： ", item);
 			that.setData({
 				json: item,
 				fix: false,
@@ -230,7 +230,7 @@ Page({
 		wx.onSocketMessage(data => {
             if (data.data[0] == "{"){
                 let newdata = JSON.parse(data.data);
-                console.log(newdata);
+                // console.log(newdata);
                 if (newdata.type == "bid") {
                     //有用户出价了
                     this.nowBid(newdata);
@@ -349,7 +349,7 @@ Page({
 		let nowJson_message = "nowJson.message";
 		let nowJson_a_id = "nowJson.a_id";
 		let nowJson_ladder = "nowJson.ladder";
-		// console.log("出价成功🇨🇳🇨🇳🇨🇳 ", JSON.stringify(data.thisS));
+		console.log("出价成功🇨🇳🇨🇳🇨🇳 ", JSON.stringify(data.thisS));
 		//出价列表
 		bidJson.unshift({
 			come_from: data.thisS.bidList[0].come_from,
@@ -403,7 +403,7 @@ Page({
 				type: 'success'
 			});
 			let item = data.data.data.data;
-            // console.log("✨出价success信息： ", item);
+            console.log("✨出价success信息： ", item);
 			let login_data = JSON.stringify({ "type": "bid", "thisS": item });
 			//个人
 			that.setData({
