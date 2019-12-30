@@ -68,14 +68,14 @@ Page({
 	//TOKEN
 	getToken: function () {
 		app.getStorage().then(data => {
-            // console.log('token:  ', data);
+            console.log('token:  ', data);
 			this.setData({
 				Token: data
 			});
             this.getData();
             this.getListData();
 		}).catch(err => {
-            // console.log('token:  ', err);
+            console.log('token:  ', err);
             this.setData({
                 Token: ""
             });
@@ -160,7 +160,7 @@ Page({
             token: that.data.Token
 		}).then(data => {
 			let item = data.data.data.data;
-			// console.log("✨拍卖大厅success信息： ", item);
+			console.log("✨拍卖大厅success信息： ", item);
 			that.setData({
 				json: item,
 				fix: false,
@@ -187,7 +187,7 @@ Page({
                 }
 			}
 		}).catch(err => {
-			// console.log(err);
+			console.log(err);
 		});
 	},
 	getListData: function(){
